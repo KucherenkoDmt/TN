@@ -1,35 +1,36 @@
 package Admin;
 
+import Patterns.Log.AbstractLogger;
 import com.google.common.collect.ImmutableMap;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.DriverCommand;
-import org.openqa.selenium.remote.RemoteWebDriver;
 
+
+import java.io.IOException;
 import java.rmi.Remote;
 
 
 
-public class EnterToPhenix extends RemoteWebDriver {
+public class EnterToPhenix extends AbstractLogger {
 
 
     public static void main(String[] args) {
-        EnterToPhenix enterToPhenix = new EnterToPhenix();
         WebDriver driver = new FirefoxDriver();
+       // log("Open phenix");
         driver.get("https://my.platformphoenix.com");
         Alert alert = driver.switchTo().alert();
         alert.sendKeys("dmitrii.kucherenko");
-      //  System.out.println(alert.getText());
-        enterToPhenix.sendKeyss("psw");
+        System.out.println(alert.getText());
+
+
+
     }
 
-
-    public void sendKeyss(String keysToSend) {
-        if(keysToSend==null) {
-            throw new IllegalArgumentException("Keys to send should be a not null CharSequence");
-        }
-        execute(DriverCommand.SET_ALERT_VALUE, ImmutableMap.of("text", keysToSend));
+    @Override
+    protected void doLogging(String stringToLog) throws IOException {
+        System.out.println(stringToLog);
     }
 }

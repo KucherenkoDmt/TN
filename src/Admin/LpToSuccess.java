@@ -47,10 +47,13 @@ public class LpToSuccess {
         lg.log("Check of success");
         assertEquals("testSuccess", driver.findElement(By.xpath("//*[contains(text(),'${LP}')]/following-sibling::td[text()='testSuccess']")).getText());
     }
-    private void enterToPhenix (){
+    private void enterToPhenix () throws IOException {
+        lg.log("Open phenix");
         driver.get("https://my.platformphoenix.com");
+        lg.log("Switch to aletr");
         Alert alert = driver.switchTo().alert();
-        alert.sendKeys("dmitrii.kucherenko");
+        lg.log("Add login");
+        alert.sendKeys(MyData.login);
 
 
         //driver.switchTo().alert().accept();
