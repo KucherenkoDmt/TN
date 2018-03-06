@@ -22,7 +22,7 @@ import java.util.concurrent.TimeUnit;
 
 import static org.junit.Assert.assertEquals;
 
-public class LpToSuccess {
+public class LpToSuccess extends BasicClaas {
     WebDriver driver = new FirefoxDriver();
     Logger lg = new ConsoleLogger();
     List<String> lp = Reader.reader("FileForRead.txt");
@@ -33,13 +33,11 @@ public class LpToSuccess {
 
     public static void main(String[] args) throws IOException, InterruptedException, AWTException {
         LpToSuccess lpToSuccess = new LpToSuccess();
-        lpToSuccess.enterToPhenix();
-        Thread.sleep(1000);
         lpToSuccess.makeLpTestSuccess();
     }
 
-    public void makeLpTestSuccess() throws IOException, InterruptedException {
-
+    public void makeLpTestSuccess() throws IOException, InterruptedException, AWTException {
+        super.enterToPhenix(driver);
         System.out.println(driver.getCurrentUrl());
         driver.manage().window().maximize();
         lg.log("Open phenix pageList");
@@ -64,9 +62,8 @@ public class LpToSuccess {
             }
             if (!status.equals("testing")) {
                 lg.log("Status's Lp isn't testing");
-               continue;
-            }
-            else {
+                continue;
+            } else {
                 lg.log("Made LP test success");
                 driver.findElement(By.xpath("//*[contains(text(),'" + lp.get(i) + "')]/following-sibling::td[text()='testing']/following::*/a[text()=\"[test success]\"]")).click();
                 Thread.sleep(7000);
@@ -77,16 +74,5 @@ public class LpToSuccess {
             }
             driver.quit();
         }
-    }
-
-    public void enterToPhenix() throws IOException, AWTException, InterruptedException {
-        lg.log("Open phenix");
-        driver.get("https://my.platformphoenix.com/");
-        Runtime.getRuntime().exec("C:\\Users\\dmitrii.kucherenko\\IdeaProjects\\AutoITScrpt\\HandleAuthentication.exe");
-        Thread.sleep(1000);
-        driver.switchTo().alert().accept();
-        lg.log("Success log in");
-        Thread.sleep(5000);
-        wait.until(ExpectedConditions.titleIs("My Application - Base"));
     }
 }

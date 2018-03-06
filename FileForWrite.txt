@@ -14,19 +14,3 @@ reg url: https://m.together2night.com/landing/?name=all_mlp_5st_mod_a_accel&isTe
 reg url: https://m.together2night.com/aff.php?dynamicpage=all_mlp_5st_mod_a_accel
  | Id: c31971fc1e2d11e89536441ea14ed80c |  user email: 5+2_03.1together@maildrop.ropot.net
  |  lid: 28b890cf1ae611e8b3481402ec33333c | gender: male | orientation: hetero | loc: ITA | trafic_souce: aff
-
-reg url: https://m.together2night.com/landing/?name=all_mlp_5st_mod_a_accel&isTesting=1&__no_cache=1
- | Id: b4b809a51e1d11e89536441ea14ed80c |  user email: 1+2_03.1together@maildrop.ropot.net
- |  lid: 28b890cf1ae611e8b3481402ec33333c | gender: female | orientation: homo | loc: USA | trafic_souce: direct
-reg url: https://m.together2night.com/landing/?name=all_mlp_5st_mod_a_accel&isTesting=1&__no_cache=1
- | Id: f265af491e2011e89536441ea14ed80c |  user email: 2+2_03.1together@maildrop.ropot.net
- |  lid: 28b890cf1ae611e8b3481402ec33333c | gender: male | orientation: hetero | loc: FRA | trafic_souce: direct
-reg url: https://m.together2night.com/landing/?name=all_mlp_5st_mod_a_accel&isTesting=1&__no_cache=1
- | Id: 6aeb87471e2b11e89536441ea14ed80c |  user email: 3+2_03.1together@maildrop.ropot.net
- |  lid: 28b890cf1ae611e8b3481402ec33333c | gender: male | orientation: hetero | loc: JPN | trafic_souce: direct
-reg url: https://m.together2night.com/landing/?name=all_mlp_5st_mod_a_accel&isTesting=1&__no_cache=1
- | Id: 33f6ec1b1e2811e89536441ea14ed80c |  user email: 4+2_03.1together@maildrop.ropot.net
- |  lid: 28b890cf1ae611e8b3481402ec33333c | gender: male | orientation: homo | loc: FIN | trafic_souce: direct
-reg url: https://m.together2night.com/aff.php?dynamicpage=all_mlp_5st_mod_a_accel
- | Id: c31971fc1e2d11e89536441ea14ed80c |  user email: 5+2_03.1together@maildrop.ropot.net
- |  lid: 28b890cf1ae611e8b3481402ec33333c | gender: male | orientation: hetero | loc: ITA | trafic_souce: aff
