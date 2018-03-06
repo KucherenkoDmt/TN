@@ -24,12 +24,6 @@ public class MakeUsersLikeTestsGBS {
 
         @Test
         public void testMakeUsersLikeTests() throws Exception {
-            String i = "1";
-            String x = "1";
-            String count = "500";
-            // ERROR: Caught exception [unknown command [while]]
-            // ERROR: Caught exception [unknown command [readCSV]]
-            // ERROR: Caught exception [unknown command [storeCellValue]]
             // Open domain
             System.out.println("domain#${url}");
             driver.get("https://my.platformphoenix.com/user/find");
@@ -51,9 +45,7 @@ public class MakeUsersLikeTestsGBS {
             }*/
             String lid = driver.findElement(By.xpath(".//*[@id='yw3']/tbody/tr[46]/td")).getText();
             System.out.println("reg url: " + reg_url + " | Id: " + user_id + " |  user email: " + user_email + " |  lid: " + lid + " | gender: " + gender + " | orientation: " + orientation + " | loc: " + LOC + " | trafic_souce: " + trafic_souce);
-            // конец цикла
-            // ERROR: Caught exception [ERROR: Unsupported command [getEval | ${i}+1 | ]]
-            // ERROR: Caught exception [unknown command [endWhile]]
+
         }
 
         @After
