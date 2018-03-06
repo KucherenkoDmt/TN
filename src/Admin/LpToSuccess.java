@@ -25,7 +25,7 @@ import static org.junit.Assert.assertEquals;
 public class LpToSuccess {
     WebDriver driver = new FirefoxDriver();
     Logger lg = new ConsoleLogger();
-    List lp = Reader.reader("FileForRead.txt");
+    List<String> lp = Reader.reader("FileForRead.txt");
     int counter = 0;
     WebDriverWait wait = new WebDriverWait(driver, 20);
 
@@ -34,89 +34,60 @@ public class LpToSuccess {
 
     public static void main(String[] args) throws IOException, InterruptedException, AWTException {
         LpToSuccess lpToSuccess = new LpToSuccess();
-
-           lpToSuccess.enterToPhenix();
-        //  Thread.sleep(10000);
-
+        lpToSuccess.enterToPhenix();
+        Thread.sleep(1000);
         lpToSuccess.makeLpTestSuccess();
-
     }
 
     public void makeLpTestSuccess() throws IOException, InterruptedException {
 
-        lg.log("Open phenix");
-        driver.get("https://my.platformphoenix.com/landing/pageList");
-        Thread.sleep(10000);
-        driver.manage().logs();
-        lg.log("Open phenix lp page");
-        Thread.sleep(10000);
-       driver.switchTo().parentFrame();
-
-        wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//a[@href='/landing/pageList']")));
-
         System.out.println(driver.getCurrentUrl());
+        driver.manage().window().maximize();
+        lg.log("Open phenix pageList");
+        driver.get("https://my.platformphoenix.com/landing/pageList");
+        wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//a[@href='/landing/pageList']")));
+        lg.log("Start of making succsess status for LP");
 
+        for (int i = 0; i < lp.size(); i++) {
+            lg.log("Current LP is: " + lp.get(i));
+            String urlLP = "https://my.platformphoenix.com/landing/pageList?ArrayProviderLandingFilterForm[landingId]=&ArrayProviderLandingFilterForm[name]=" + lp.get(i) + "";
+            System.out.println(urlLP);
+            driver.get(urlLP);
+            wait.until(ExpectedConditions.titleIs("My Application - PageList Landing"));
+            Thread.sleep(1000);
 
-        System.out.println(lp.get(counter));
-        String urlLP = "https://my.platformphoenix.com/landing/pageList?ArrayProviderLandingFilterForm[landingId]=&ArrayProviderLandingFilterForm[name]=" + lp.get(counter) + "";
-        System.out.println(urlLP);
+            String status = driver.findElement(By.xpath("//*[contains(text(),'" + lp.get(i) + "')]/following-sibling::td[7]")).getText();
+            lg.log("Status of lp is: " + status);
+            Thread.sleep(1000);
+            if (lp.get(i).isEmpty()) {
+                lg.log("Empty line");
+                continue;
+            }
+            if (!status.equals("testing")) {
+                lg.log("Status's Lp isn't testing");
+               continue;
+            }
+            else {
+                lg.log("Made LP test success");
+                driver.findElement(By.xpath("//*[contains(text(),'" + lp.get(counter) + "')]/following-sibling::td[text()='testing']/following::*/a[text()=\"[test success]\"]")).click();
+                Thread.sleep(7000);
 
-        lg.log("Open phenix lp page with lp");
-        driver.navigate().to(urlLP);
-        driver.get(urlLP);
-        Thread.sleep(10000);
-        wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[contains(text(),'" + lp.get(counter) + "')]/following-sibling::td[text()='testing']/following::*/a[text()=\"[test success]\"]")));
-
-        lg.log("Made LP test success");
-        driver.findElement(By.xpath("//*[contains(text(),'" + lp.get(counter) + "')]/following-sibling::td[text()='testing']/following::*/a[text()=\"[test success]\"]")).click();
-
-        lg.log("Check of success");
-        assertEquals("testSuccess", driver.findElement(By.xpath("//*[contains(text(),'${LP}')]/following-sibling::td[text()='testSuccess']")).getText());
+                lg.log("Check of success");
+                assertEquals("testSuccess", driver.findElement(By.xpath("//*[contains(text()," + lp.get(i) + ")]/following-sibling::td[7]")).getText());
+                lg.log("Next LP");
+            }
+            driver.quit();
+        }
     }
 
     private void enterToPhenix() throws IOException, AWTException, InterruptedException {
-
-
         lg.log("Open phenix");
-        driver.get("https://dmitrii.kucherenko:Zz0981316396(^@my.platformphoenix.com");
-        //  driver.get("https://my.platformphoenix.com");
-      /*  Alert alert = driver.switchTo().alert();
-        lg.log("Add login");
-        alert.sendKeys(MyData.login);
-
-        lg.log("switch field");
-        Robot robot = new Robot();
-        robot.keyPress(KeyEvent.VK_TAB);
-        robot.keyPress(KeyEvent.VK_Z);
-        robot.keyPress(KeyEvent.VK_CAPS_LOCK);
-        robot.keyPress(KeyEvent.VK_Z);
-        robot.keyPress(KeyEvent.VK_0);
-        robot.keyPress(KeyEvent.VK_9);
-        robot.keyPress(KeyEvent.VK_8);
-        robot.keyPress(KeyEvent.VK_1);
-        robot.keyPress(KeyEvent.VK_3);
-        robot.keyPress(KeyEvent.VK_1);
-        robot.keyPress(KeyEvent.VK_6);
-        robot.keyPress(KeyEvent.VK_3);
-        robot.keyPress(KeyEvent.VK_CAPS_LOCK);
-        robot.keyPress(KeyEvent.VK_9);
-        robot.keyPress(KeyEvent.VK_6);
-        robot.keyPress(KeyEvent.VK_SHIFT+KeyEvent.VK_9);
-        robot.keyPress(KeyEvent.VK_SHIFT+KeyEvent.VK_6);*/
-
-
-
-
-
+        driver.get("https://my.platformphoenix.com/");
+        Runtime.getRuntime().exec("C:\\Users\\dmitrii.kucherenko\\IdeaProjects\\AutoITScrpt\\HandleAuthentication.exe");
+        Thread.sleep(1000);
+        driver.switchTo().alert().accept();
+        lg.log("Success log in");
         Thread.sleep(5000);
-        lg.log("Add password");
-        //driver.switchTo().alert().sendKeys("dsf");
-
-
-        lg.log("Submit");
-     //   driver.switchTo().alert().accept();
-
-        //*/
-
+        wait.until(ExpectedConditions.titleIs("My Application - Base"));
     }
 }
