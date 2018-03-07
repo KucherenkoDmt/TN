@@ -1,9 +1,4 @@
-1+2_03.1together@maildrop.ropot.net
-3.1together@maildrop.ropot.net
-2+2_03.1together@maildrop.ropot.net
-3+2_03.1together@maildrop.ropot.net
-4+2_03.1together@maildrop.ropot.net
-
-5+2_03.1together@maildrop.ropot.net
-
-
+etsijadeittaa_wlp_index_t
+etsijadeittaa_mlp_index_t
+randezona_wlp_index_t
+randezona_mlp_index_t
