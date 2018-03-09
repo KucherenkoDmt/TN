@@ -34,7 +34,7 @@ public class LpToSuccess extends BasicClass {
         log("Open phenix pageList");
         driver.get("https://my.platformphoenix.com/landing/pageList");
         wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//a[@href='/landing/pageList']")));
-        log("Start of making succsess status for LP");
+        log("Start of making success status for LP");
 
         for (int i = 0; i < lp.size(); i++) {
             log("Current LP is: " + lp.get(i));

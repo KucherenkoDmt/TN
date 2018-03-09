@@ -6,19 +6,27 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxProfile;
+import org.openqa.selenium.firefox.XpiDriverService;
 import org.openqa.selenium.firefox.internal.ProfilesIni;
 
 public class Screepts {
     WebDriver driver;
+
     public static void main(String[] args) {
+        Screepts screepts = new Screepts();
+        screepts.firefoxAcc();
+    }
+
+    public void screenshot() {
 
     }
-    public void firefoxAcc(){
+
+    public void firefoxAcc() {
         ProfilesIni profile = new ProfilesIni();
         FirefoxProfile myProfile = profile.getProfile("MySelenium");
 
         System.setProperty("webdriver.gecko.driver", "Z:\\Soft\\firefoxdriver\\geckodriver.exe");
-        driver = new FirefoxDriver();
+        driver = new FirefoxDriver( /*myProfile*/);
         driver.get("https://www.google.com.ua/?hl=ru");
     }
 

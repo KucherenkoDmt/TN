@@ -1,19 +1,19 @@
 
-reg url: https://m.iwantu.com/landing/?name=all_mlp_5st_violet_a_emailn&isTesting=1&__no_cache=1
-Id: bc656b38221711e89536441ea14ed80c |  user email: 1+07_03.4together@maildrop.ropot.net
-lid: c05bc9b3213e11e8b3481402ec33333c | gender: female | orientation: hetero | loc: USA | trafic_souce: direct
-reg url: https://m.loveaholics.com/landing/?name=lvh_mlp_5st_milf_memb_a_emailn&isTesting=1&__no_cache=1
-Id: fdb81dc7221711e89536441ea14ed80c |  user email: 2+07_03.4together@maildrop.ropot.net
-lid: 4bc7ea0b215111e8b3481402ec33333c | gender: male | orientation: hetero | loc: USA | trafic_souce: direct
-reg url: https://m.benaughty.com/landing/?name=bn_mlp_5step_a_emailn&isTesting=1&__no_cache=1
-Id: 2e64d118221811e89536441ea14ed80c |  user email: 3+07_03.4together@maildrop.ropot.net
-lid: 554d1240215511e8b3481402ec33333c | gender: male | orientation: hetero | loc: USA | trafic_souce: direct
-reg url: https://m.benaughty.com/landing/?name=all_mlp_5t_mod_a_emailn&isTesting=1&__no_cache=1
-Id: 5d9adb4e221811e89536441ea14ed80c |  user email: 4+07_03.4together@maildrop.ropot.net
-lid: 8445def9215711e8b3481402ec33333c | gender: male | orientation: hetero | loc: USA | trafic_souce: direct
-reg url: https://m.flirt.com/landing/?name=fl_5st_memb_a_emailn&isTesting=1&__no_cache=1
-Id: 7e2ad558221811e89536441ea14ed80c |  user email: 5+07_03.4together@maildrop.ropot.net
-lid: 4468669b215811e8b3481402ec33333c | gender: male | orientation: hetero | loc: USA | trafic_souce: direct
-reg url: https://m.flirt.com/landing/?name=fl_mlp_5st_mod_a_emailn&isTesting=1&__no_cache=1
-Id: 95b2f90b221811e89536441ea14ed80c |  user email: 6+07_03.4together@maildrop.ropot.net
-lid: aff2a2f521fa11e8b3481402ec33333c | gender: male | orientation: hetero | loc: USA | trafic_souce: direct
+reg url: https://www.benaughty.com/aff.php?dynamicpage=bn_wlp_5stmetr_a_emailn&email=1%2b09_03.7together%40maildrop.ropot.net
+Id: ee1cd53223b411e89536441ea14ed80c |  user email: 1+09_03.7together@maildrop.ropot.net
+lid: 90cf645521fb11e8b3481402ec33333c | gender: male | orientation: hetero | loc: USA | trafic_souce: aff
+reg url: https://www.flirt.com/aff.php?dynamicpage=all_wlp_5st_rhomb_a_emailn&email=%2b09_03.7together%40maildrop.ropot.net
+Id: 04f5844123b511e89536441ea14ed80c |  user email: 2+09_03.7together@maildrop.ropot.net
+lid: bb9c80b021fc11e8b3481402ec33333c | gender: male | orientation: hetero | loc: USA | trafic_souce: aff
+reg url: https://www.flirt.com/aff.php?dynamicpage=all_wlp_5st_violet_a_emailn&email=%2b09_03.7together%40maildrop.ropot.net
+Id: 35e1f02123b511e89536441ea14ed80c |  user email: 3+09_03.7together@maildrop.ropot.net
+lid: a12a678d21fd11e8b3481402ec33333c | gender: female | orientation: hetero | loc: USA | trafic_souce: aff
+reg url: https://www.loveaholics.com/aff.php?dynamicpage=lvh_wlp_4st_tmr_a_emailn&email=%2b09_03.7together%40maildrop.ropot.net
+Id: 63e9c42723b511e89536441ea14ed80c |  user email: 4+09_03.7together@maildrop.ropot.net
+lid: 9b60f12521fe11e8b3481402ec33333c | gender: male | orientation: hetero | loc: USA | trafic_souce: aff
+reg url: https://www.loveaholics.com/aff.php?dynamicpage=all_wlp_5t_mod_a_blur_emailn&email=5%2b09_03.7together%40maildrop.ropot.net
+Id: 7d669c6523b511e89536441ea14ed80c |  user email: 5+09_03.7together@maildrop.ropot.net
+lid: b021687a220011e8b3481402ec33333c | gender: male | orientation: hetero | loc: USA | trafic_souce: aff
+reg url: https://www.flirt.com/aff.php?dynamicpage=fl_wlp_5st_memb_a_emailn&email=6%2b09_03.7together%40maildrop.ropot.net
+Id: 915f2f8323b511e89536441ea14ed80c |  user email: 6+09_03.7together@maildrop.ropot.net
+lid: def72a83220111e8b3481402ec33333c | gender: male | orientation: hetero | loc: USA | trafic_souce: aff
