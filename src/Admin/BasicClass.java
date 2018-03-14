@@ -42,7 +42,7 @@ public class BasicClass extends AbstractLogger {
     protected void tearDown(WebDriver driverThis) throws Exception {
         driverThis.quit();
     }
-    protected   List<String> reader(String fileName) throws IOException {
+    protected  List<String> reader(String fileName) throws IOException {
         BufferedReader reader = new BufferedReader(new FileReader(fileName));
         String line;
         List<String> lines = new ArrayList<String>();
