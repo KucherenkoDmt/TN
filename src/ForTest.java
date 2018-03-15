@@ -9,6 +9,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.firefox.FirefoxProfile;
+import org.openqa.selenium.firefox.internal.ProfilesIni;
 import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -31,36 +32,41 @@ import static org.junit.Assert.fail;
 
 public class ForTest {
 
-   /* ProxyServer server = new ProxyServer(4444);
-    private WebDriver driver;
+    /*public void server()
+        ProxyServer server = new ProxyServer(4444);
+        private WebDriver driver;
 
-    @Before
-    public void startProxy() throws Exception {
-        BrowserMobProxy proxy = new BrowserMobProxyServer();
-        proxy.start(0);
-        server = new ProxyServer(4444);
-        server.start();
-        server.autoBasicAuthorization("", "username", "password");
-        Proxy proxy = server.seleniumProxy();
+        @Before
+        public void startProxy () throws Exception {
+            BrowserMobProxy proxy = new BrowserMobProxyServer();
+            proxy.start(0);
+            server = new ProxyServer(4444);
+            server.start();
+            server.autoBasicAuthorization("", "username", "password");
+            Proxy proxy = server.seleniumProxy();
 
-        DesiredCapabilities capabilities = new DesiredCapabilities();
-        capabilities.setCapability(CapabilityType.PROXY, proxy);
+            DesiredCapabilities capabilities = new DesiredCapabilities();
+            capabilities.setCapability(CapabilityType.PROXY, proxy);
+FirefoxOptions  test  = new FirefoxOptions().merge(capabilities);
+            driver = new FirefoxDriver(test);
 
-        driver = new FirefoxDriver(capabilities);
+        }
+
+        @Test
+        public void testAccessProtectedSite () throws Exception {
+            driver.get("https://example.com");
+            driver.findElement(By.className("sign-out"));
+        }
+
+        @After
+        public void stopProxyServer () throws Exception {
+            driver.quit();
+            server.stop();
+        }
     }
 
-    @Test
-    public void testAccessProtectedSite() throws Exception {
-        driver.get("https://example.com");
-        driver.findElement(By.className("sign-out"));
-    }
 
-    @After
-    public void stopProxyServer() throws Exception {
-        driver.quit();
-        server.stop();
-    }
-  /*private WebDriver driver;
+  private WebDriver driver;
     private String baseUrl;
     private boolean acceptNextAlert = true;
     private StringBuffer verificationErrors = new StringBuffer();
@@ -98,5 +104,6 @@ public class ForTest {
         if (!"".equals(verificationErrorString)) {
             fail(verificationErrorString);
         }
-    }*/
+    }
+*/
 }

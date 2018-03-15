@@ -1,13 +1,19 @@
 
-reg url: https://m.benaughty.com/landing/?name=bn_mlp_index_mob&isTesting=1&__no_cache=1
-Id: 6cad949f829811e79a97441ea14ed80c |  user email: benaughty@maildrop.ropot.net
-lid: 403df42af53111e39ef5441ea14ed80c | gender: male | orientation: hetero | loc: HUN | trafic_souce: direct
-reg url: https://m.flirt.com/landing/?name=m_onestep_lp_flirt&isTesting=1&__no_cache=1
-Id: 76accab2277611e89536441ea14ed80c |  user email: flirt@maildrop.ropot.net
-lid: 4c01d361adf411e38e3e68b599be7074 | gender: male | orientation: hetero | loc: HUN | trafic_souce: direct
-reg url: https://m.benaughty.com/landing/?name=bn_mlp_index_mob&isTesting=1&__no_cache=1
-Id: 14fc2c8c277711e89536441ea14ed80c |  user email: 5+14_03.4together@maildrop.ropot.net
-lid: d000db2ad48711e58a6f101f74370270 | gender: male | orientation: homo | loc: ROU | trafic_souce: direct
-reg url: https://m.flirt.com/landing/?name=m_onestep_lp_flirt&isTesting=1&__no_cache=1
-Id: 013607e5277711e89536441ea14ed80c |  user email: 6+14_03.4together@maildrop.ropot.net
-lid: 0d9408aac49911e38e3e68b599be7074 | gender: male | orientation: hetero | loc: ROU | trafic_souce: direct
+reg url: http://www.flirt.com/
+Id: 69c75193286211e89536441ea14ed80c |  user email: 6_15_03.5together@maildrop.ropot.net
+lid: 0d9408aac49911e38e3e68b599be7074 | gender: male | orientation: hetero | loc: USA | trafic_souce: direct
+reg url: https://m.benaughty.com/aff.php?dynamicpage=bn_mlp_5step_a_emailn&utm_campaign=dh_em&utm_funnel=tds&utm_ex=a&dci=747839a3e5d35f4160bacae9bf418670036f75df&tds_campaign=mtu20812bo&tds_id=mtu20812bo_a_lp_regapi_bn&tds_oid=554d1240215511e8b3481402ec33333c_&id=21699&tdsId=mtu20812bo_a_choice_regapi&mf=orig&email=7_15_03.5together%40maildrop.ropot.net&p_tds_cid=d83d51a1aa4aae8e2a05c1440724ba95b43e6bc9&tds_bo_origin=jump&tds_cid=f542f829106a2f1c482f059ac8972917e119561d&utm_boff=mtu20812bo&b=1&tds_bo=1&
+Id: 98d32789286411e89536441ea14ed80c |  user email: 7_15_03.5together@maildrop.ropot.net
+lid: 554d1240215511e8b3481402ec33333c | gender: male | orientation: hetero | loc: USA | trafic_souce: aff
+reg url: https://m.benaughty.com/aff.php?dynamicpage=bn_mlp_5step_a_emailn&utm_campaign=dh_em&utm_funnel=tds&utm_ex=a&dci=1bd2a45fe9678ee4798e01d51f6f69284ee56608&tds_campaign=mtu20812&tds_id=mtu20812_a_lp_regapi_bn&tds_oid=554d1240215511e8b3481402ec33333c_&id=21562&tdsId=mtu20812_a_choice_regapi&mf=orig&email=8_15_03.5together%40maildrop.ropot.net&tds_cid=af2e469d7dde0a3df904f3dee58fd176989415d2&
+Id: 03c3416d286511e89536441ea14ed80c |  user email: 8_15_03.5together@maildrop.ropot.net
+lid: 554d1240215511e8b3481402ec33333c | gender: male | orientation: hetero | loc: USA | trafic_souce: aff
+reg url: https://m.benaughty.com/aff.php?dynamicpage=all_mlp_5t_mod_a_emailn&utm_campaign=dh_em&utm_funnel=tds&utm_ex=a&dci=7a3d97ff3fb17240a61a7ee00481eb8f6c7a2455&tds_campaign=mtu20812&tds_id=mtu20812_a_lp_regapi_bn&tds_oid=8445def9215711e8b3481402ec33333c_&id=21699&tdsId=mtu20812_a_choice_regapi&mf=orig&email=9_15_03.5together%40maildrop.ropot.net&tds_cid=fb74085176ae66d7dc31946feb35f7aca6915461&
+Id: ac023831286811e89536441ea14ed80c |  user email: 9_15_03.5together@maildrop.ropot.net
+lid: 8445def9215711e8b3481402ec33333c | gender: male | orientation: hetero | loc: USA | trafic_souce: aff
+reg url: http://www.iamnaughty.com/
+Id: f0977875286811e89536441ea14ed80c |  user email: 10_15_03.5together@maildrop.ropot.net
+lid: 161f537274aa11e4ac4dd4bed9a9456d | gender: male | orientation: hetero | loc: USA | trafic_souce: direct
+reg url: http://www.iamnaughty.com/
+Id: bb0be8b1286911e89536441ea14ed80c |  user email: 11_15_03.5together@maildrop.ropot.net
+lid: 161f537274aa11e4ac4dd4bed9a9456d | gender: male | orientation: hetero | loc: USA | trafic_souce: direct

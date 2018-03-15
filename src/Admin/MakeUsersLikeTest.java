@@ -29,6 +29,7 @@ public class MakeUsersLikeTest extends BasicClass {
         super.enterToPhenix(driver);
         String usersLog = "";
         for (int i = 0; i < emailOfusers.size(); i++) {
+            Thread.sleep(500);
             if (emailOfusers.get(i).isEmpty()) {
                 log("Empty line");
                 continue;

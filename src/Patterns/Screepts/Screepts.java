@@ -99,9 +99,9 @@ public class Screepts extends BasicClass{
         String PROXY = "localhost:8080";
         Proxy proxy = new Proxy();
         proxy.setHttpProxy(PROXY).setFtpProxy(PROXY).setSslProxy(PROXY).setSocksProxy(PROXY);
-        DesiredCapabilities cap =new DesiredCapabilities();
+        DesiredCapabilities cap = new DesiredCapabilities();
         cap.setCapability(CapabilityType.PROXY, proxy);
-     //   fprofile.setPreference("general.useragent.override", "iPhone");
+
         driver = new FirefoxDriver();
     }
 
