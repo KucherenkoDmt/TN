@@ -56,13 +56,13 @@ public class LpToSuccess extends BasicClass {
                 continue;
             } else {
                 log("Made LP test success");
-                driver.findElement(By.xpath("//*[contains(text(),'" + lp.get(i) + "')]/following::a[text()=\"[action]\"]")).click();
+                driver.findElement(By.xpath("//*[text()='" + lp.get(i) + "']/following::a[text()=\"[action]\"]")).click();
                 Thread.sleep(500);
-                driver.findElement(By.xpath("//*[contains(text(),'" + lp.get(i) + "')]/following::*/a[text()=\"[test success]\"]")).click();
+                driver.findElement(By.xpath("//*[text()='" + lp.get(i) + "']/following::*/a[text()=\"[test success]\"]")).click();
                 Thread.sleep(3000);
 
                 log("Check of success");
-                assertEquals("testSuccess", driver.findElement(By.xpath("//*[contains(text(),'" + lp.get(i) + "')]/following-sibling::td[7]")).getText());
+                assertEquals("testSuccess", driver.findElement(By.xpath("//*[text()='" + lp.get(i) + "')]/following-sibling::td[7]")).getText());
                 log("Next LP");
             }
 

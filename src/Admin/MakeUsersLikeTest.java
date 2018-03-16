@@ -29,7 +29,7 @@ public class MakeUsersLikeTest extends BasicClass {
         super.enterToPhenix(driver);
         String usersLog = "";
         for (int i = 0; i < emailOfusers.size(); i++) {
-            Thread.sleep(500);
+            Thread.sleep(1000);
             if (emailOfusers.get(i).isEmpty()) {
                 log("Empty line");
                 continue;
@@ -46,7 +46,7 @@ public class MakeUsersLikeTest extends BasicClass {
             if (super.isElementPresent(By.xpath("//a[text()=\"Mark all as testers\"]"), driver)){
                 log("Make the user as test");
                 driver.findElement(By.xpath("//a[text()=\"Mark all as testers\"]")).click();
-                Thread.sleep(1000);
+                Thread.sleep(1500);
                 log("Taking of users info");
                 String user_id = driver.findElement(By.xpath("//*[@id='yw2']/table/tbody/tr/td[3]")).getText();
                 String user_email = driver.findElement(By.xpath(".//*[@id='yw3']/tbody/tr[3]/td")).getText();
@@ -56,10 +56,10 @@ public class MakeUsersLikeTest extends BasicClass {
                 String LOC = driver.findElement(By.xpath("//*[@id='yw3']/tbody/tr[18]/td")).getText();
                 String trafic_souce = driver.findElement(By.xpath("//*[@id='yw3']/tbody/tr[42]/td")).getText();
                 String lid = driver.findElement(By.xpath(".//*[@id='yw3']/tbody/tr[46]/td")).getText();
-                if (lid.equals("unknown")) {
+                /*if (lid.equals("unknown")) {
                     log("Isn't lid");
-                    driver.quit();
-                }
+                    driver.quit();}*/
+
                 String info = "reg url: " + reg_url + "\n" + "Id: " + user_id + " |  user email: " + user_email + "\n" + "lid: " + lid + " | gender: "
                         + gender + " | orientation: " + orientation + " | loc: " + LOC + " | trafic_souce: " + trafic_souce;
                 System.out.println(info);

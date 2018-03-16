@@ -1,5 +1,5 @@
-import org.junit.Before;
-import org.openqa.selenium.Capabilities;
+package Test;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
