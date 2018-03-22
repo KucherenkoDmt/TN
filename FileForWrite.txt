@@ -1,7 +1,4 @@
 
-reg url: https://m.wildspank.com/ppc.php?dynamicpage=ws_mlp_5st_modap_t
-Id: 2d65d531293611e89536441ea14ed80c |  user email: 5+16_03.2together@maildrop.ropot.net
-lid: c83b0725292d11e8b3481402ec33333c | gender: male | orientation: hetero | loc: USA | trafic_souce: direct
-reg url: https://m.wildspank.com/ppc.php?dynamicpage=ws_mlp_5st_modap_t_color
-Id: 62f331e5293611e89536441ea14ed80c |  user email: 6+16_03.2together@maildrop.ropot.net
-lid: 1c18592f292e11e8b3481402ec33333c | gender: female | orientation: hetero | loc: USA | trafic_souce: direct
+reg url: https://m.iwantu.com/aff.php?dynamicpage=iwu_mlp_5st_memb_a_emln
+Id: d84465042dab11e89536441ea14ed80c |  user email: 6+21_03.4together@maildrop.ropot.net
+lid: a365a0912c1611e8b3481402ec33333c | gender: male | orientation: hetero | loc: FRA | trafic_souce: aff

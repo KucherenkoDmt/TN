@@ -2,6 +2,7 @@ package Patterns.Screepts;
 
 
 import Admin.BasicClass;
+import org.apache.http.HttpRequest;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -22,22 +23,25 @@ import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
 public class Screepts extends BasicClass{
-    WebDriver driver = new  FirefoxDriver();
+    WebDriver driverFF = new  FirefoxDriver();
+
+    WebDriver driverCR = new ChromeDriver();
 
 
     public static void main(String[] args) throws AWTException, InterruptedException, IOException {
         Screepts screepts = new Screepts();
       //  screepts.getPhenixCookie();
-        screepts.emulateMobile();
-
-
+        screepts.setLocByCookie();
     }
+
+    public void httpRequestBuelder(){
+      //  HttpRequest response = new DefaultBiHttpRequesrBuilder()
+    }
+
     public void emulateMobile() throws InterruptedException {
         Map<String, String> mobileEmulation = new HashMap<>();
 
         mobileEmulation.put("deviceName", "Nexus 5");
-
-
         ChromeOptions chromeOptions = new ChromeOptions();
         chromeOptions.setExperimentalOption("mobileEmulation", mobileEmulation);
 
@@ -47,9 +51,10 @@ public class Screepts extends BasicClass{
     }
 
     public void getPhenixCookie() throws AWTException, InterruptedException, IOException {
-        super.enterToPhenix(driver);
-        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
-        Set<Cookie> totalCookies = driver.manage().getCookies();
+
+        super.enterToPhenix(driverFF);
+        driverFF.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+        Set<Cookie> totalCookies = driverFF.manage().getCookies();
         System.out.println("Total Number Of cookies : " + totalCookies.size());
 
         for (Cookie currentCookie : totalCookies) {
@@ -58,7 +63,7 @@ public class Screepts extends BasicClass{
                             + currentCookie.getExpiry()));
          //   driver.manage().deleteCookieNamed(currentCookie.getName());
         }
-        driver.close();
+        driverFF.close();
         WebDriver driver2 = new  FirefoxDriver();
 
         log("close and open driver");
@@ -70,11 +75,12 @@ public class Screepts extends BasicClass{
         }
         driver2.get("https://my.platformphoenix.com/");
     }
+
     public void getCookie() throws AWTException, InterruptedException, IOException {
-        driver.manage().window().maximize();
+        driverFF.manage().window().maximize();
        // enter to site
-        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
-        Set<Cookie> totalCookies = driver.manage().getCookies();
+        driverFF.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+        Set<Cookie> totalCookies = driverFF.manage().getCookies();
         System.out.println("Total Number Of cookies : " + totalCookies.size());
 
         for (Cookie currentCookie : totalCookies) {
@@ -83,27 +89,68 @@ public class Screepts extends BasicClass{
                             + currentCookie.getExpiry()));
         }
     }
+
     public void setCookie() throws AWTException, InterruptedException, IOException {
        // enter to site
         Cookie name = new Cookie("testCoockie", "WSfed-ffsd-234DFGe-YUTYU");
-        driver.manage().addCookie(name);
+        driverFF.manage().addCookie(name);
         System.out.println();
     }
+    public void setLocByCookie() throws AWTException, InterruptedException, IOException {
+        // enter to site
+        driverCR.get("https://www.flirt.com/");
+        Thread.sleep(3000);
+        driverCR.manage().deleteCookieNamed("locale");
+        driverCR.manage().deleteCookieNamed("locale:");
+
+        driverCR.manage().deleteAllCookies();
+        Thread.sleep(1000);
+        Cookie loc = new Cookie("locale:", "es", ".flirt.com", "/", null, true, true);
+        Cookie loc1 = new Cookie("locale", "es", ".flirt.com", "/", null, true, true);
+
+        driverCR.manage().addCookie(loc);
+
+        Thread.sleep(1000);
+
+        driverCR.manage().addCookie(loc1);
+        driverCR.manage().addCookie(loc);
+
+        driverCR.navigate().refresh();
+
+        System.out.println();
+    }
+
     public void deleteCookie(){
 
-        driver.manage().deleteCookieNamed("testCoockie");
+        driverFF.manage().deleteCookieNamed("testCoockie");
     }
 
-
-    public void proxy(){
-        String PROXY = "localhost:8080";
+    public void proxyFF() throws InterruptedException {
+        String PROXY = "182.52.22.58:8080";
         Proxy proxy = new Proxy();
         proxy.setHttpProxy(PROXY).setFtpProxy(PROXY).setSslProxy(PROXY).setSocksProxy(PROXY);
-        DesiredCapabilities cap = new DesiredCapabilities();
-        cap.setCapability(CapabilityType.PROXY, proxy);
-
-        driver = new FirefoxDriver();
+       // DesiredCapabilities cap = new DesiredCapabilities();
+      //  cap.setCapability(CapabilityType.PROXY, proxy);
+        FirefoxOptions firefoxOptions = new FirefoxOptions().setProxy(proxy);
+        driverFF = new FirefoxDriver(firefoxOptions);
+        Thread.sleep(2000);
+        driverFF.get("https://2ip.ru/");
     }
+
+    public void proxyCR() throws InterruptedException{
+
+        String proxySG = "182.52.22.58:8080";
+        Proxy proxy = new Proxy();
+        proxy.setHttpProxy(proxySG).setFtpProxy(proxySG).setSslProxy(proxySG).setSocksProxy(proxySG);
+
+        ChromeOptions chromeOptions = new ChromeOptions();
+        chromeOptions.setProxy(proxy);
+
+        WebDriver driver = new ChromeDriver(chromeOptions);
+        Thread.sleep(2000);
+        driver.get("https://2ip.ru");
+    }
+
 
     public void screenshot() {
 
@@ -115,8 +162,8 @@ public class Screepts extends BasicClass{
 
         System.setProperty("webdriver.gecko.driver", "Z:\\Soft\\firefoxdriver\\geckodriver.exe");
        FirefoxOptions firefoxOptions = new FirefoxOptions((Capabilities) profile);
-        driver = new FirefoxDriver(/*myProfile*/);
-        driver.get("https://www.google.com.ua/?hl=ru");
+        driverFF = new FirefoxDriver(/*myProfile*/);
+        driverFF.get("https://www.google.com.ua/?hl=ru");
     }
 
     public String returnDomainFromUrl(String url, WebDriver driverThis) {
@@ -130,6 +177,7 @@ public class Screepts extends BasicClass{
     public void isElementPresent(WebDriver driverThis) {
         Boolean isElementPresent = driverThis.findElements(By.xpath("some xpath")).size() != 0;
     }
+
     protected void enterToPhoenixByCrome(WebDriver driverThis) throws IOException, AWTException, InterruptedException {
         System.out.println("Open phoenix");
         driverThis.get("https://my.platformphoenix.com/");
