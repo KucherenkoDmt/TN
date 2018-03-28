@@ -22,7 +22,7 @@ public class mobIndex extends BasicClass {
     //читать линки с файла
     @BeforeClass
     public void setUp() throws IOException {
-        List<String> urlOfIndex = super.reader("FileForReader");
+        List<String> urlOfIndex = super.readerTxtFile("FileForReader");
 
     }
 // мобильная версия

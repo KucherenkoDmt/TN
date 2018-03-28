@@ -1,4 +1,6 @@
-package HomeWork.UrlBuilder;
+package Patterns.UrlBuilder;
+
+import Patterns.UrlBuilder.Url;
 
 public class Main {
 

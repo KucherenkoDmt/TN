@@ -3,6 +3,8 @@ package Admin;
 import Patterns.Log.AbstractLogger;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.*;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -22,7 +24,7 @@ public class BasicClass extends AbstractLogger {
         }
     }
 
-    protected void enterToPhenix(WebDriver driverThis) throws IOException, AWTException, InterruptedException {
+    public void enterToPhenix(WebDriver driverThis) throws IOException, AWTException, InterruptedException {
         log("Open phenix");
         driverThis.get("https://my.platformphoenix.com/");
         Runtime.getRuntime().exec("C:\\Users\\dmitrii.kucherenko\\IdeaProjects\\AutoITScrpt\\HandleAuthentication.exe");
@@ -42,18 +44,40 @@ public class BasicClass extends AbstractLogger {
     protected void tearDown(WebDriver driverThis) throws Exception {
         driverThis.quit();
     }
-    protected  List<String> reader(String fileName) throws IOException {
+    protected  ArrayList<String> readerTxtFile(String fileName) throws IOException {
         BufferedReader reader = new BufferedReader(new FileReader(fileName));
         String line;
-        List<String> lines = new ArrayList<String>();
+        ArrayList<String> lines = new ArrayList<String>();
         while ((line = reader.readLine()) != null) {
             lines.add(line);
+        }
+        return lines;
+    }
+    protected  ArrayList<String> readerCsvFile(String fileName) throws IOException {
+        BufferedReader reader = new BufferedReader(new FileReader(fileName));
+        String line;
+        ArrayList<String> lines = new ArrayList<String>();
+        while ((line = reader.readLine()) != null) {
+              lines.add(line.substring(1,line.length()-1).trim());
         }
         return lines;
     }
     protected void forScreen(WebDriver driverThis) throws IOException {
         File screenshot = ((TakesScreenshot)driverThis).getScreenshotAs(OutputType.FILE);
         FileUtils.copyFile(screenshot, new File("Z:\\selenium\\Screen\\screenshot.jpg"));
+    }
+    public void proxyCR() throws InterruptedException{
+
+        String proxySG = "185.145.202.171:3128";
+        Proxy proxy = new Proxy();
+        proxy.setHttpProxy(proxySG).setFtpProxy(proxySG).setSslProxy(proxySG).setSocksProxy(proxySG);
+
+        ChromeOptions chromeOptions = new ChromeOptions();
+        chromeOptions.setProxy(proxy);
+
+        WebDriver driver = new ChromeDriver(chromeOptions);
+        Thread.sleep(2000);
+        driver.get("https://2ip.ru");
     }
 
     @Override

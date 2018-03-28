@@ -1,4 +1,4 @@
-package Test;
+package HttpRequest;
 
 import org.apache.http.HttpResponse;
 

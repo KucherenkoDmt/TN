@@ -1,4 +1,4 @@
-package HomeWork.UrlBuilder;
+package Patterns.UrlBuilder;
 
 import java.util.ArrayList;
 
@@ -67,6 +67,7 @@ public class Url {
         }
 
         public Url build() {
+
             return new Url(this);
         }
 

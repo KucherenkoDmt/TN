@@ -23,15 +23,15 @@ import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
 public class Screepts extends BasicClass{
-    WebDriver driverFF = new  FirefoxDriver();
+    WebDriver driverFF;
 
-    WebDriver driverCR = new ChromeDriver();
+    WebDriver driverCR;
 
 
     public static void main(String[] args) throws AWTException, InterruptedException, IOException {
         Screepts screepts = new Screepts();
       //  screepts.getPhenixCookie();
-        screepts.setLocByCookie();
+        screepts.proxyCR();
     }
 
     public void httpRequestBuelder(){
@@ -98,7 +98,7 @@ public class Screepts extends BasicClass{
     }
     public void setLocByCookie() throws AWTException, InterruptedException, IOException {
         // enter to site
-        driverCR.get("https://www.flirt.com/");
+        driverCR.get("https://www.flirt.com");
         Thread.sleep(3000);
         driverCR.manage().deleteCookieNamed("locale");
         driverCR.manage().deleteCookieNamed("locale:");
@@ -126,12 +126,13 @@ public class Screepts extends BasicClass{
     }
 
     public void proxyFF() throws InterruptedException {
-        String PROXY = "182.52.22.58:8080";
+        driverFF = new FirefoxDriver();
+        String PROXY = "185.145.202.171:3128";
         Proxy proxy = new Proxy();
         proxy.setHttpProxy(PROXY).setFtpProxy(PROXY).setSslProxy(PROXY).setSocksProxy(PROXY);
-       // DesiredCapabilities cap = new DesiredCapabilities();
-      //  cap.setCapability(CapabilityType.PROXY, proxy);
-        FirefoxOptions firefoxOptions = new FirefoxOptions().setProxy(proxy);
+        DesiredCapabilities cap = new DesiredCapabilities();
+        cap.setCapability(CapabilityType.PROXY, proxy);
+        FirefoxOptions firefoxOptions = new FirefoxOptions().merge(cap);
         driverFF = new FirefoxDriver(firefoxOptions);
         Thread.sleep(2000);
         driverFF.get("https://2ip.ru/");
@@ -139,7 +140,7 @@ public class Screepts extends BasicClass{
 
     public void proxyCR() throws InterruptedException{
 
-        String proxySG = "182.52.22.58:8080";
+        String proxySG = "185.145.202.171:3128";
         Proxy proxy = new Proxy();
         proxy.setHttpProxy(proxySG).setFtpProxy(proxySG).setSslProxy(proxySG).setSocksProxy(proxySG);
 
@@ -161,8 +162,8 @@ public class Screepts extends BasicClass{
         FirefoxProfile myProfile = profile.getProfile("MySelenium");
 
         System.setProperty("webdriver.gecko.driver", "Z:\\Soft\\firefoxdriver\\geckodriver.exe");
-       FirefoxOptions firefoxOptions = new FirefoxOptions((Capabilities) profile);
-        driverFF = new FirefoxDriver(/*myProfile*/);
+       FirefoxOptions firefoxOptions = new FirefoxOptions((Capabilities) myProfile);
+        driverFF = new FirefoxDriver(firefoxOptions);
         driverFF.get("https://www.google.com.ua/?hl=ru");
     }
 
@@ -176,21 +177,5 @@ public class Screepts extends BasicClass{
 
     public void isElementPresent(WebDriver driverThis) {
         Boolean isElementPresent = driverThis.findElements(By.xpath("some xpath")).size() != 0;
-    }
-
-    protected void enterToPhoenixByCrome(WebDriver driverThis) throws IOException, AWTException, InterruptedException {
-        System.out.println("Open phoenix");
-        driverThis.get("https://my.platformphoenix.com/");
-        System.out.println("1");
-
-        //driverThis.switchTo().alert().sendKeys("log");
-        System.out.println("2");
-        Runtime.getRuntime().exec("C:\\Users\\dmitrii.kucherenko\\IdeaProjects\\AutoITScrpt\\Chrome.exe");
-
-        Thread.sleep(1000);
-        driverThis.switchTo().alert().accept();
-        System.out.println("Success login to phoenix");
-        Thread.sleep(5000);
-        new WebDriverWait(driverThis, 15).until(ExpectedConditions.titleIs("My Application - Base"));
     }
 }

@@ -20,6 +20,7 @@ public class HttpR {
     public static void main(String[] args) throws UnirestException {
         GetRequest request = Unirest.get("https://www.flirt.com");
 
+
      /*   HttpResponse<JsonNode> response1 = Unirest.get("https://my.platformphoenix.com/").basicAuth("dmitrii.kucherenko", MyData.getPassword()).asJson();
         response1.getStatus();
         System.out.println(response1.getStatus());*/

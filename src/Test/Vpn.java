@@ -7,4 +7,6 @@ import java.io.IOException;
 public class Vpn {
 
     public static void main(String[] args) {
-}}
+
+}
+}

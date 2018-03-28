@@ -32,9 +32,9 @@ import static org.junit.Assert.fail;
 //import net.lightbody.bmp.proxy.ProxyServer;
 
 
-public class ForTest {
-
-    /*public void server()
+public class BrowserMobProxy {
+/*
+      public void server()
         ProxyServer server = new ProxyServer(4444);
         private WebDriver driver;
 
