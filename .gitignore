@@ -1,5 +1,6 @@
 *.iml
 .idea
+*.csv
 src/Admin/MyData.java
 FileForWrite.txt
 FileForRead.txt

@@ -24,9 +24,10 @@ public class BasicClass extends AbstractLogger {
         }
     }
 
-    public void enterToPhenix(WebDriver driverThis) throws IOException, AWTException, InterruptedException {
+    protected void enterToPhenix(WebDriver driverThis) throws IOException, AWTException, InterruptedException {
         log("Open phenix");
         driverThis.get("https://my.platformphoenix.com/");
+        Thread.sleep(2000);
         Runtime.getRuntime().exec("C:\\Users\\dmitrii.kucherenko\\IdeaProjects\\AutoITScrpt\\HandleAuthentication.exe");
         Thread.sleep(1000);
         driverThis.switchTo().alert().accept();
@@ -77,7 +78,43 @@ public class BasicClass extends AbstractLogger {
 
         WebDriver driver = new ChromeDriver(chromeOptions);
         Thread.sleep(2000);
-        driver.get("https://2ip.ru");
+
+    }
+    public String returnDomainFromUrl(String urlText) {
+        String[] splitUrl = urlText.split("\\.");
+        return splitUrl[1];
+    }
+    public String choseActiveElement(WebDriver driverThis, String xpath1,String xpath2,String xpath3){
+        if(isElementPresent(xpath1, driverThis)){
+            System.out.println("xpath1 works");
+            return xpath1;
+        }
+        if(isElementPresent(xpath2, driverThis)){
+            System.out.println("xpath2 works");
+            return xpath2;
+        }
+        if (isElementPresent(xpath3, driverThis)){
+            System.out.println("xpath3 works");
+            return xpath3;
+        }
+        System.out.println("All of this xpath not active");
+        return "";
+    }
+    public String choseActiveElement(WebDriver driverThis, String xpath1,String xpath2){
+        if(isElementPresent(xpath1, driverThis)){
+            System.out.println("xpath1 works");
+            return xpath1;
+        }
+        if(isElementPresent(xpath2, driverThis)){
+            System.out.println("xpath2 works");
+            return xpath2;
+        }
+        System.out.println("All of this xpath not active");
+        return "";
+    }
+
+    public Boolean isElementPresent(String xpath, WebDriver driverThis) {
+        return driverThis.findElements(By.xpath(xpath)).size() != 0;
     }
 
     @Override

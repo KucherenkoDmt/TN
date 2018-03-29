@@ -7,6 +7,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import regs.WebIndex;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -15,7 +16,8 @@ import java.util.List;
 import static org.junit.Assert.fail;
 
 public class MakeUsersLikeTest extends BasicClass {
-    ArrayList<String> emailOfusers = super.readerCsvFile("make_user.csv");
+    ArrayList<String> emailOfusers = super.readerTxtFile("FileForRead.txt");
+  //  ArrayList<String> emailOfusers = super.readerCsvFile("make_user.csv");
     WebDriver driver = new FirefoxDriver();
     WebDriverWait wait = new WebDriverWait(driver, 20);
 
@@ -26,7 +28,6 @@ public class MakeUsersLikeTest extends BasicClass {
    public void makeUserLikeTests() throws Exception {
         makeUserAsTests(emailOfusers);
    }
-
 
     public void makeUserAsTests(ArrayList<String> emailOfusers) throws Exception {
         super.enterToPhenix(driver);

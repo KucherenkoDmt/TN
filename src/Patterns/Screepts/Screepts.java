@@ -2,6 +2,7 @@ package Patterns.Screepts;
 
 
 import Admin.BasicClass;
+import org.apache.commons.io.FileUtils;
 import org.apache.http.HttpRequest;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -16,6 +17,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.awt.*;
+import java.io.File;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
@@ -24,7 +26,6 @@ import java.util.concurrent.TimeUnit;
 
 public class Screepts extends BasicClass{
     WebDriver driverFF;
-
     WebDriver driverCR;
 
 
@@ -34,9 +35,6 @@ public class Screepts extends BasicClass{
         screepts.proxyCR();
     }
 
-    public void httpRequestBuelder(){
-      //  HttpRequest response = new DefaultBiHttpRequesrBuilder()
-    }
 
     public void emulateMobile() throws InterruptedException {
         Map<String, String> mobileEmulation = new HashMap<>();
@@ -153,8 +151,9 @@ public class Screepts extends BasicClass{
     }
 
 
-    public void screenshot() {
-
+    public void screenshot() throws IOException {
+        File screenshot = ((TakesScreenshot)this.driverFF).getScreenshotAs(OutputType.FILE);
+        FileUtils.copyFile(screenshot, new File("Z:\\selenium\\Screen\\screenshot.jpg"));
     }
 
     public void firefoxAcc() {

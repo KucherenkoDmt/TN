@@ -4,13 +4,14 @@ import Admin.BasicClass;
 import Admin.MakeUsersLikeTest;
 import Patterns.CSV.CsvCell;
 import Patterns.CSV.ReadCSV4colon;
-import org.junit.*;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Proxy;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.io.IOException;
@@ -20,32 +21,35 @@ import java.util.Date;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
-public class WebIndex extends BasicClass {
+public class WebIndexFromFile extends BasicClass {
     WebDriver driver;
     WebDriverWait wait;
-    List<String> urlOfIndex = super.readerTxtFile("FileForRead.txt");
-  //   List<CsvCell> regInfo = ReadCSV4colon.csvDataRead();
-
+    List<CsvCell> regInfo = ReadCSV4colon.csvDataRead();
     ArrayList<String> emailOfUsers = new ArrayList<>();
-    int numberOfRegistration = 1;
 
-    public WebIndex() throws IOException, InterruptedException {
-    }
 
-    @Before
-    public void beforeTest() throws InterruptedException {
-        this.driver = new ChromeDriver(setIp());
-        wait = new WebDriverWait(this.driver, 15);
-        this.driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
+    public WebIndexFromFile() throws IOException, InterruptedException {}
+
+  //  @Before
+    public void beforeTest() throws InterruptedException, IOException {
+        log("Before test");
+       // regInfo = ReadCSV4colon.csvDataRead();
+        log("reg info is readed " + regInfo.size());
+     //   wait = new WebDriverWait(this.driver, 15);
+      //  this.driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
     }
 
     @Test
     public void regs() throws Exception {
-        for (int i = 0; i < urlOfIndex.size(); i++) {
-            for (int j = 0; j < numberOfRegistration; j++) {
+        log("1");
+        for (int i = 0; i < regInfo.size()-1; i++) {
+            log("1");
+            this.driver = new ChromeDriver(setIp(regInfo.get(i).getIp_address()));
+            log("1");
+            for (int j = 0; j < regInfo.get(i).getCounterOfRegistration(); j++) {
                 log("Open index");
-                this.driver.get(urlOfIndex.get(i));
-                Thread.sleep(2000);
+                this.driver.get(regInfo.get(i).getLink());
+                Thread.sleep(3000);
                 log("Set gender");
                 click(choseActiveElement(this.driver, "//option[@value='female-male']", "//span[@class='gender_w selected']", "//option[@value='female']"));
                 log("Set age");
@@ -58,7 +62,7 @@ public class WebIndex extends BasicClass {
                 log("Check checkbox of Terms and click if it available");
                 checkCheckboxOfTerms();
                 log("click submit");
-                click(choseActiveElement(this.driver,  "//*[@id='submit-btn']", "//div[@class='submit_button']/button[@id='submit_button']", "button[@id='submit_button']"));
+                click(choseActiveElement(this.driver, "//*[@id='submit-btn']", "//div[@class='submit_button']/button[@id='submit_button']", "button[@id='submit_button']"));
                 log("wait until page to load");
                 Thread.sleep(5000);
                 log("success registration");
@@ -72,12 +76,13 @@ public class WebIndex extends BasicClass {
 
     @After
     public void tearDown() throws Exception {
+        log("After test");
         String emails = "";
         for (int i = 0; i < emailOfUsers.size(); i++) {
             emails += emailOfUsers.get(i) + "\n";
         }
         System.out.println(emails);
-        makeUsersLikeTest(emailOfUsers);
+      //  makeUsersLikeTest(emailOfUsers);
         log("Close driver");
         driver.quit();
     }
@@ -87,13 +92,9 @@ public class WebIndex extends BasicClass {
         makeUsersLikeTest.makeUserAsTests(emailOfusers);
     }
 
-    public ArrayList<String> getEmailOfUsers() {
-        return this.emailOfUsers;
-    }
+    public ChromeOptions setIp(String ip_address) throws InterruptedException {
 
-    public ChromeOptions setIp() throws InterruptedException {
-
-        String proxySG = "178.62.117.231:3128";
+        String proxySG = ip_address;
         Proxy proxy = new Proxy();
         proxy.setHttpProxy(proxySG).setFtpProxy(proxySG).setSslProxy(proxySG).setSocksProxy(proxySG);
 
@@ -123,16 +124,15 @@ public class WebIndex extends BasicClass {
             click("//select[@id='UserForm_day']/option[@value='01']");
             click("//select[@id='UserForm_month']/option[@value='01']");
             click("//select[@id='UserForm_year']/option[@value='1999']");
-        }
-        else {
+        } else {
             System.out.println("this is new DOB");
             click("//option[@value='18']");
         }
     }
 
-    public void checkCheckboxOfTerms(){
-       if(isElementPresent("//div[@id='terms_check']/label", this.driver)){
-           click("//div[@id='terms_check']/label");
+    public void checkCheckboxOfTerms() {
+        if (isElementPresent("//div[@id='terms_check']/label", this.driver)) {
+            click("//div[@id='terms_check']/label");
         }
     }
 }

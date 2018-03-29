@@ -1,41 +1,44 @@
 package Test;
 
+import Patterns.CSV.CsvCell;
+import Patterns.CSV.ReadCSV4colon;
+import org.openqa.selenium.By;
+import org.openqa.selenium.Capabilities;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
+import org.openqa.selenium.firefox.FirefoxProfile;
+import org.openqa.selenium.firefox.internal.ProfilesIni;
+import sun.java2d.cmm.Profile;
 
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.List;
 import java.util.Scanner;
 
 public class Test {
     WebDriver driver;
 
-
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException, InterruptedException {
         Test test = new Test();
-        test.ffMob();
+        test.test();
     }
 
-    public void ffMob() throws IOException {
-      //  driver = new FirefoxDriver();
-        String domain = "https://m.hellohotties.com/aff.php?dynamicpage=all_mlp_5st_peach_a_c_emln&isTesting=1&__no_cache=1";
-        System.out.println(returnDomainFromUrl(domain));
-
-    }
-
-    public String returnDomainFromUrl(String url, WebDriver driverThis) {
-        driverThis.get(url); //or take current domain
-        JavascriptExecutor javascript = (JavascriptExecutor) driverThis;
-        String DomainUsingJS = (String) javascript.executeScript("return document.split(\"www.\").pop().split(\".com\").shift()");
-        System.out.println("My Current URL Is  : " + DomainUsingJS);
-        return DomainUsingJS;
-    }
-
-    public String returnDomainFromUrl(String urlText) {
-        String[] splitUrl = urlText.split("\\.");
-         return splitUrl[1];
+    public void test() throws IOException, InterruptedException {
+        ReadCSV4colon readCSV4colon = new ReadCSV4colon();
+        List<CsvCell> list = readCSV4colon.csvDataRead();
+        for (int i = 0; i < list.size(); i++) {
+            System.out.println(list.get(i).getCounterOfRegistration());
+            System.out.println(list.get(i).getIp_address());
+            System.out.println(list.get(i).getLink());
+            System.out.println(list.get(i).getNumberOfGenderValue());
+        }
     }
 }
+
+
