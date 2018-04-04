@@ -1,9 +1,9 @@
 package Patterns.Screepts;
 
 
-import Admin.BasicClass;
+import Admin.BasicClase;
+import Admin.TestBase;
 import org.apache.commons.io.FileUtils;
-import org.apache.http.HttpRequest;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -13,8 +13,6 @@ import org.openqa.selenium.firefox.FirefoxProfile;
 import org.openqa.selenium.firefox.internal.ProfilesIni;
 import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.awt.*;
 import java.io.File;
@@ -24,9 +22,13 @@ import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
-public class Screepts extends BasicClass{
+public class Screepts extends BasicClase{
     WebDriver driverFF;
     WebDriver driverCR;
+    WebDriver driver;
+
+    public Screepts() throws IOException, InterruptedException {
+    }
 
 
     public static void main(String[] args) throws AWTException, InterruptedException, IOException {
@@ -50,7 +52,7 @@ public class Screepts extends BasicClass{
 
     public void getPhenixCookie() throws AWTException, InterruptedException, IOException {
 
-        super.enterToPhenix(driverFF);
+     //   super.enterToPhenix(driverFF);
         driverFF.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         Set<Cookie> totalCookies = driverFF.manage().getCookies();
         System.out.println("Total Number Of cookies : " + totalCookies.size());
@@ -176,5 +178,10 @@ public class Screepts extends BasicClass{
 
     public void isElementPresent(WebDriver driverThis) {
         Boolean isElementPresent = driverThis.findElements(By.xpath("some xpath")).size() != 0;
+    }
+
+    public void writeIpAddressToCookie(){
+        driver.manage().addCookie(new Cookie("ip_address", "88.85.128.0"));
+        driver.navigate().refresh();
     }
 }

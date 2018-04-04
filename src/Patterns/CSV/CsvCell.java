@@ -3,10 +3,10 @@ package Patterns.CSV;
 public class CsvCell {
     private String link;
     private String ip_address;
-    private int counterOfRegistration;
-    private int numberOfGenderValue;
+    private String counterOfRegistration;
+    private String numberOfGenderValue;
 
-    public CsvCell(String link, String ip_address, int counterOfRegistration, int numberOfGenderValue) {
+    public CsvCell(String link, String ip_address, String counterOfRegistration, String numberOfGenderValue) {
         this.link = link;
         this.ip_address = ip_address;
         this.counterOfRegistration = counterOfRegistration;
@@ -23,11 +23,10 @@ public class CsvCell {
     }
 
     public int getCounterOfRegistration() {
-        return counterOfRegistration;
+        return Integer.parseInt(counterOfRegistration);
     }
 
     public int getNumberOfGenderValue() {
-        return numberOfGenderValue;
+        return Integer.parseInt(numberOfGenderValue);
     }
-
 }

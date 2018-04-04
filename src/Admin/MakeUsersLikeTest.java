@@ -7,21 +7,20 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import regs.WebIndex;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.List;
 
 import static org.junit.Assert.fail;
 
-public class MakeUsersLikeTest extends BasicClass {
+public class MakeUsersLikeTest extends BasicClase {
     ArrayList<String> emailOfusers = super.readerTxtFile("FileForRead.txt");
   //  ArrayList<String> emailOfusers = super.readerCsvFile("make_user.csv");
     WebDriver driver = new FirefoxDriver();
     WebDriverWait wait = new WebDriverWait(driver, 20);
 
-    public MakeUsersLikeTest() throws IOException {
+    public MakeUsersLikeTest() throws IOException, InterruptedException {
+        super();
     }
 
    @Test
@@ -47,7 +46,7 @@ public class MakeUsersLikeTest extends BasicClass {
             log("Click to find user");
             driver.findElement(By.name("yt0")).click();
             Thread.sleep(3000);
-            if (super.isElementPresent(By.xpath("//a[text()=\"Mark all as testers\"]"), driver)){
+            if (isElementPresent(By.xpath("//a[text()=\"Mark all as testers\"]"), driver)){
                 log("Make the user as test");
                 driver.findElement(By.xpath("//a[text()=\"Mark all as testers\"]")).click();
                 Thread.sleep(1500);
@@ -77,6 +76,8 @@ public class MakeUsersLikeTest extends BasicClass {
         super.writeToFile(usersLog);
         super.tearDown(driver);
     }
+
+
     public void makeUserAsTests(String emailOfusers) throws Exception {
         super.enterToPhenix(driver);
         String usersLog = "";

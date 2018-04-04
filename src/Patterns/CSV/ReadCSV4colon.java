@@ -21,7 +21,7 @@ public class ReadCSV4colon {
         String[] csvCell;
         List<CsvCell> list = new ArrayList<>();
         while ((csvCell = reader.readNext()) != null) {
-            CsvCell csvCell1 = new CsvCell(csvCell[0], csvCell[1], Integer.parseInt(csvCell[2]), Integer.parseInt(csvCell[3]));
+            CsvCell csvCell1 = new CsvCell(csvCell[0], csvCell[1], csvCell[2], csvCell[3]);
             list.add(csvCell1);
         }
       return list;

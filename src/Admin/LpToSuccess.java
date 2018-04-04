@@ -1,12 +1,10 @@
 package Admin;
 
-import Patterns.Reader;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.awt.*;
@@ -15,29 +13,23 @@ import java.util.List;
 
 import static org.junit.Assert.assertEquals;
 
-public class LpToSuccess extends BasicClass {
+public class LpToSuccess extends BasicClase {
     WebDriver driver = new FirefoxDriver();
     List<String> lp = super.readerTxtFile("FileForRead.txt");
     WebDriverWait wait = new WebDriverWait(driver, 20);
 
-    public LpToSuccess() throws IOException {
+    public LpToSuccess() throws IOException, InterruptedException {
+        super();
     }
 
-    public static void main(String[] args) throws IOException, InterruptedException, AWTException {
-        LpToSuccess lpToSuccess = new LpToSuccess();
-        lpToSuccess.makeLpTestSuccess();
-    }
     @Test
     public void makeLpTestSuccess() throws IOException, InterruptedException, AWTException {
         super.enterToPhenix(driver);
-        //   System.out.println(driver.getCurrentUrl());
         driver.manage().window().maximize();
-        log("Open phenix pageList");
-        driver.get("https://my.platformphoenix.com/landing/pageList");
-        wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//a[@href='/landing/pageList']")));
+
         log("Start of making success status for LP");
         String notTestingStetusLp = "";
-        String landingPage ="";
+        String landingPage = "";
         for (int i = 0; i < lp.size(); i++) {
             landingPage = lp.get(i).trim();
             log("Current LP is: " + landingPage);
@@ -72,8 +64,7 @@ public class LpToSuccess extends BasicClass {
             }
 
         }
-        log("Not success LP");
-        System.out.println(notTestingStetusLp);
+        log("Not successed LP is: " + notTestingStetusLp);
         driver.quit();
     }
 }

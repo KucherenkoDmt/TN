@@ -1,16 +1,14 @@
 package regs;
 
-import Admin.BasicClass;
+import Admin.BasicClase;
+import Admin.TestBase;
 import Admin.MakeUsersLikeTest;
-import Patterns.CSV.CsvCell;
-import Patterns.CSV.ReadCSV4colon;
 import org.junit.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Proxy;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.io.IOException;
@@ -20,7 +18,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
-public class WebIndex extends BasicClass {
+public class WebIndex extends BasicClase {
     WebDriver driver;
     WebDriverWait wait;
     List<String> urlOfIndex = super.readerTxtFile("FileForRead.txt");
