@@ -1,13 +1,15 @@
-package Admin;
+package regs;
 
 import Patterns.CSV.CsvCell;
 import Patterns.CSV.ReadCSV4colon;
 import Patterns.Log.AbstractLogger;
+import Patterns.Log.ConsoleLogger;
 import com.opencsv.CSVReader;
 import org.apache.commons.io.FileUtils;
 import org.junit.After;
 import org.junit.Before;
 import org.openqa.selenium.*;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -15,13 +17,12 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.awt.*;
 import java.io.*;
-import java.util.ArrayList;
-import java.util.HashMap;
+import java.text.SimpleDateFormat;
+import java.util.*;
 import java.util.List;
-import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
-public class TestBase extends AbstractLogger {
+public class TestBase {
     protected WebDriver driver;
     protected WebDriverWait wait;
     protected List<CsvCell> regInfo;
@@ -30,25 +31,18 @@ public class TestBase extends AbstractLogger {
     public TestBase() throws IOException, InterruptedException {
     }
 
-    @Before
-    public void setUp() throws InterruptedException, IOException {
-        this.driver = new ChromeDriver();
-        log("Before test");
-        regInfo = ReadCSV4colon.csvDataRead();
-        log("reg info is readed and have row :" + regInfo.size());
-        wait = new WebDriverWait(this.driver, 15);
-        this.driver.manage().timeouts().implicitlyWait(1, TimeUnit.SECONDS);
-        beforeTest();
-    }
-    protected void beforeTest() throws InterruptedException, IOException {}
 
-    @After
-    public void tearDown() throws Exception {
-        afterTest();
-        this.driver.quit();
+    public void choseCorrectedDOBandSetAge() throws IOException {
+        if (isElementPresent("//select[@id='UserForm_month']")) {
+            log("this is old DOB");
+            click("//select[@id='UserForm_day']/option[@value='01']");
+            click("//select[@id='UserForm_month']/option[@value='01']");
+            click("//select[@id='UserForm_year']/option[@value='1999']");
+        } else {
+            log("this is new DOB");
+            click("//option[@value='18']");
+        }
     }
-
-    protected void afterTest() throws Exception {}
 
     protected boolean isElementPresent(By by) {
         try {
@@ -90,7 +84,7 @@ public class TestBase extends AbstractLogger {
         return lines;
     }
 
-    public void csvDataRead() throws IOException, InterruptedException {
+    protected void csvDataRead() throws IOException, InterruptedException {
         CSVReader reader = new CSVReader(new FileReader("C:\\Users\\dmitrii.kucherenko\\IdeaProjects\\TN\\InfoForTesting.csv"));
         String[] csvCell;
         List<CsvCell> list = new ArrayList<>();
@@ -105,7 +99,7 @@ public class TestBase extends AbstractLogger {
         FileUtils.copyFile(screenshot, new File("Z:\\selenium\\Screen\\screenshot.jpg"));
     }
 
-    public void writeIpAddressToCookie(String ip_address){
+    protected void writeIpAddressToCookie(String ip_address) {
         driver.manage().addCookie(new Cookie("ip_address", ip_address));
         driver.navigate().refresh();
     }
@@ -115,7 +109,7 @@ public class TestBase extends AbstractLogger {
         return splitUrl[1];
     }
 
-    public String choseActiveElement(WebDriver driverThis, String xpath1, String xpath2, String xpath3) throws IOException {
+    protected String choseActiveElement(String xpath1, String xpath2, String xpath3) throws IOException {
         if (isElementPresent(xpath1)) {
             log("xpath1 works");
             return xpath1;
@@ -132,7 +126,7 @@ public class TestBase extends AbstractLogger {
         return "";
     }
 
-    public String choseActiveElement(String xpath1, String xpath2) throws IOException {
+    protected String choseActiveElement(String xpath1, String xpath2) throws IOException {
         if (isElementPresent(xpath1)) {
             log("xpath1 works");
             return xpath1;
@@ -145,24 +139,39 @@ public class TestBase extends AbstractLogger {
         return "";
     }
 
-    public Boolean isElementPresent(String xpath) {
+    protected Boolean isElementPresent(String xpath) {
         return this.driver.findElements(By.xpath(xpath)).size() != 0;
     }
-    public void emulateMobile() throws InterruptedException {
+
+    protected ChromeOptions emulateMobile() throws InterruptedException {
         Map<String, String> mobileEmulation = new HashMap<>();
 
         mobileEmulation.put("deviceName", "Nexus 5");
         ChromeOptions chromeOptions = new ChromeOptions();
         chromeOptions.setExperimentalOption("mobileEmulation", mobileEmulation);
-
-        WebDriver driver = new ChromeDriver(chromeOptions);
-        Thread.sleep(1000);
-        driver.get("https://m.flirt.com/");
+        return chromeOptions;
     }
 
-        @Override
-    protected void doLogging(String stringToLog) throws IOException {
-        System.out.println(stringToLog);
+    protected String generateRandomEmail() {
+        SimpleDateFormat sf = new SimpleDateFormat("dd-HH_mm.ss");
+        Date date = new Date();
+        return sf.format(date) + "tn@maildrop.ropot.net";
+    }
+
+
+    protected void click(String xpath) {
+        this.driver.findElement(By.xpath(xpath)).click();
+    }
+
+    protected void type(String xpath, String text) {
+        this.driver.findElement(By.xpath(xpath)).clear();
+        this.driver.findElement(By.xpath(xpath)).sendKeys(text);
+    }
+
+
+    protected void log(String stringToLog) throws IOException {
+        ConsoleLogger consoleLogger = new ConsoleLogger();
+        consoleLogger.log(stringToLog);
     }
 
 }

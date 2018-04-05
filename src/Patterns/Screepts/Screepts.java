@@ -2,7 +2,6 @@ package Patterns.Screepts;
 
 
 import Admin.BasicClase;
-import Admin.TestBase;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
