@@ -1,31 +1,14 @@
 
-reg url: https://m.loveaholics.com/ppc.php?dynamicpage=all_mlp_5st_mod_t
-Id: 2a1140fb380d11e89536441ea14ed80c |  user email: 1+4_04.3together@maildrop.ropot.net
-lid: 611db831ffe811e689f9984be1741384 | gender: male | orientation: hetero | loc: USA | trafic_souce: ppc
-reg url: https://m.flirt.com/ppc.php?dynamicpage=fl_mlp_5st_mod_t
-Id: 4377a7b1380d11e89536441ea14ed80c |  user email: 2+4_04.3together@maildrop.ropot.net
-lid: 5ee2b60c769f11e6bf1e984be1741384 | gender: male | orientation: hetero | loc: USA | trafic_souce: ppc
-reg url: https://m.quickflirt.com/ppc.php?dynamicpage=qf_mlp_5st_mod_t
-Id: 54069e05380d11e89536441ea14ed80c |  user email: 3+4_04.3together@maildrop.ropot.net
-lid: c6724735ccd811e689f9984be1741384 | gender: male | orientation: hetero | loc: USA | trafic_souce: ppc
-reg url: https://m.wantmatures.com/ppc.php?dynamicpage=wtm_mlp_5st_memb_t
-Id: 8559f76e380d11e89536441ea14ed80c |  user email: 4+4_04.3together@maildrop.ropot.net
-lid: 20197e168c7f11e69bf5984be1741384 | gender: male | orientation: hetero | loc: USA | trafic_souce: direct
-reg url: https://m.enticematures.com/ppc.php?dynamicpage=mgn_mlp_5st_memb_t
-Id: 8fe47852380d11e89536441ea14ed80c |  user email: 5+4_04.3together@maildrop.ropot.net
-lid: 82a17cb704c511e789f9984be1741384 | gender: male | orientation: hetero | loc: USA | trafic_souce: direct
-reg url: http://www.quickflirt.com/ppc.php?dynamicpage=qf_wlp_passion_t
-Id: 517679c9381111e89536441ea14ed80c |  user email: 7+4_04.3together@maildrop.ropot.net
-lid: da8def096c1611e49ef5441ea14ed80c | gender: male | orientation: hetero | loc: USA | trafic_souce: ppc
-reg url: https://www.flirt.com/ppc.php?dynamicpage=all_wlp_5st_mod_t_d
-Id: 5b062f54381111e89536441ea14ed80c |  user email: 8+4_04.3together@maildrop.ropot.net
-lid: 4576585ad7e111e689f9984be1741384 | gender: male | orientation: hetero | loc: USA | trafic_souce: ppc
-reg url: http://www.loveaholics.com/ppc.php?dynamicpage=lvh_wlp_passion_t
-Id: 68b22cc4381111e89536441ea14ed80c |  user email: 9+4_04.3together@maildrop.ropot.net
-lid: 9d725c04006711e49ef5441ea14ed80c | gender: male | orientation: hetero | loc: USA | trafic_souce: ppc
-reg url: https://www.enticematures.com/ppc.php?dynamicpage=em_wlp_5st_memb_t
-Id: 935db182381111e89536441ea14ed80c |  user email: 11+4_04.3together@maildrop.ropot.net
-lid: 678bcc6e285111e8b3481402ec33333c | gender: male | orientation: hetero | loc: USA | trafic_souce: direct
-reg url: https://www.wantmatures.com/ppc.php?dynamicpage=wntm_wlp_index
-Id: 9d9147d1381111e89536441ea14ed80c |  user email: 12+4_04.3together@maildrop.ropot.net
-lid: df2c40be54bc11e68a6f101f74370270 | gender: male | orientation: hetero | loc: USA | trafic_souce: direct
+reg url: https://m-igetnaughty-com-rel-stage.platformphoenix.com/aff.php?dynamicpage=ign_mlp_5st_mod_a_ja
+Id: f397e0ea39ad11e89536441ea14ed80c |  user email: 1+6_04.7together@maildrop.ropot.net
+lid: b9be3f5ba9d411e7b3481402ec33333c | gender: male | orientation: homo | loc: JPN | trafic_souce: direct
+reg url: https://m-benaughty-com-rel-stage.platformphoenix.com/aff.php?dynamicpage=bn_mlp_5st_memb_a_ja
+Id: b3712f2139a711e89536441ea14ed80c |  user email: 3+6_04.6together@maildrop.ropot.net
+lid: 00a05ece175811e68a6f101f74370270 | gender: male | orientation: hetero | loc: JPN | trafic_souce: aff
+reg url: https://m-igetnaughty-com-rel-stage.platformphoenix.com/aff.php?dynamicpage=ign_mlp_5st_memb_a_ja
+Id: 5fd9a8bd39af11e89536441ea14ed80c |  user email: 4+6_04.7together@maildrop.ropot.net
+lid: 26fb43d1a9d811e7b3481402ec33333c | gender: male | orientation: hetero | loc: JPN | trafic_souce: direct
+reg url: https://m-upforit-com-rel-stage.platformphoenix.com/aff.php?dynamicpage=ufi_mlp_5st_mod_a_ja
+Id: adb2600839af11e89536441ea14ed80c |  user email: 5+6_04.7together@maildrop.ropot.net
+lid: 7027962e6e2211e789f9984be1741384 | gender: male | orientation: hetero | loc: JPN | trafic_souce: aff
+dmitrii.kucherenko  Zz981316396*

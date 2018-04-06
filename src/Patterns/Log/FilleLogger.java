@@ -7,11 +7,8 @@ public class FilleLogger extends AbstractLogger{
     protected void toFile(String stringToLog) throws IOException {
         super.toFile(stringToLog);
     }
-
     @Override
-    protected void doLogging(String stringToLog) throws IOException {
-
-    }
+    protected void doLogging(String stringToLog) { }
 }
 
 

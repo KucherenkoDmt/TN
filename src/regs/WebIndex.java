@@ -60,10 +60,7 @@ public class WebIndex extends TestBaseWeb {
         log("Close driver");
     }
 
-    public void makeUsersLikeTest(ArrayList<String> emailOfusers) throws Exception {
-        MakeUsersLikeTest makeUsersLikeTest = new MakeUsersLikeTest();
-        makeUsersLikeTest.makeUserAsTests(emailOfusers);
-    }
+
 
 
 

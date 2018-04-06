@@ -1,5 +1,6 @@
 package regs;
 
+import Admin.MakeUsersLikeTest;
 import Patterns.CSV.CsvCell;
 import Patterns.CSV.ReadCSV4colon;
 import Patterns.Log.AbstractLogger;
@@ -28,11 +29,8 @@ public class TestBase {
     protected List<CsvCell> regInfo;
     protected ArrayList<String> emailOfUsers = new ArrayList<>();
 
-    public TestBase() throws IOException, InterruptedException {
-    }
 
-
-    public void choseCorrectedDOBandSetAge() throws IOException {
+    public void choseCorrectedDOBandSetAge() {
         if (isElementPresent("//select[@id='UserForm_month']")) {
             log("this is old DOB");
             click("//select[@id='UserForm_day']/option[@value='01']");
@@ -52,8 +50,12 @@ public class TestBase {
             return false;
         }
     }
+    public void makeUsersLikeTest(ArrayList<String> emailOfusers) throws Exception {
+        MakeUsersLikeTest makeUsersLikeTest = new MakeUsersLikeTest();
+        makeUsersLikeTest.makeUserAsTests(emailOfusers);
+    }
 
-    protected void enterToPhenix() throws IOException, AWTException, InterruptedException {
+    protected void enterToPhenix() throws InterruptedException, IOException {
         log("Open phenix");
         this.driver.get("https://my.platformphoenix.com/");
         Thread.sleep(2000);
@@ -109,7 +111,7 @@ public class TestBase {
         return splitUrl[1];
     }
 
-    protected String choseActiveElement(String xpath1, String xpath2, String xpath3) throws IOException {
+    protected String choseActiveElement(String xpath1, String xpath2, String xpath3) {
         if (isElementPresent(xpath1)) {
             log("xpath1 works");
             return xpath1;
@@ -126,7 +128,7 @@ public class TestBase {
         return "";
     }
 
-    protected String choseActiveElement(String xpath1, String xpath2) throws IOException {
+    protected String choseActiveElement(String xpath1, String xpath2)  {
         if (isElementPresent(xpath1)) {
             log("xpath1 works");
             return xpath1;
@@ -143,14 +145,6 @@ public class TestBase {
         return this.driver.findElements(By.xpath(xpath)).size() != 0;
     }
 
-    protected ChromeOptions emulateMobile() throws InterruptedException {
-        Map<String, String> mobileEmulation = new HashMap<>();
-
-        mobileEmulation.put("deviceName", "Nexus 5");
-        ChromeOptions chromeOptions = new ChromeOptions();
-        chromeOptions.setExperimentalOption("mobileEmulation", mobileEmulation);
-        return chromeOptions;
-    }
 
     protected String generateRandomEmail() {
         SimpleDateFormat sf = new SimpleDateFormat("dd-HH_mm.ss");
@@ -169,7 +163,7 @@ public class TestBase {
     }
 
 
-    protected void log(String stringToLog) throws IOException {
+    protected void log(String stringToLog){
         ConsoleLogger consoleLogger = new ConsoleLogger();
         consoleLogger.log(stringToLog);
     }

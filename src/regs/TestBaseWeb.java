@@ -10,8 +10,7 @@ import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
 public class TestBaseWeb extends TestBase{
-    public TestBaseWeb() throws IOException, InterruptedException {
-    }
+
     @Before
     public void setUp() throws InterruptedException, IOException {
         this.driver = new ChromeDriver();
@@ -37,7 +36,7 @@ public class TestBaseWeb extends TestBase{
     }
     protected void afterTest() throws Exception {
     }
-    protected String choseGenderWeb(int numberOfGender) throws IOException {
+    protected String choseGenderWeb(int numberOfGender)  {
         // 1 - male
         // 2 - female
         if (numberOfGender == 1) {

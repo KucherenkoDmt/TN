@@ -139,7 +139,7 @@ public class BasicClase extends AbstractLogger {
     }
 
     @Override
-    protected void doLogging(String stringToLog) throws IOException {
+    protected void doLogging(String stringToLog){
         System.out.println(stringToLog);
     }
 
