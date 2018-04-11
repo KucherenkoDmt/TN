@@ -1,74 +1,60 @@
 package Test;
 
-import org.apache.commons.io.FileUtils;
+
+import net.lightbody.bmp.BrowserMobProxyServer;
+import net.lightbody.bmp.proxy.ProxyServer;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import org.openqa.grid.web.servlet.handler.WebDriverRequestFactory;
-import org.openqa.selenium.*;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.By;
+import org.openqa.selenium.Proxy;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
-import org.openqa.selenium.firefox.FirefoxProfile;
-import org.openqa.selenium.firefox.internal.ProfilesIni;
 import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.awt.*;
-import java.awt.event.KeyEvent;
-import java.io.File;
-import java.io.IOException;
-
-import java.util.HashMap;
-import java.util.Map;
-import java.util.concurrent.TimeUnit;
-
-import static org.junit.Assert.fail;
-//import net.lightbody.bmp.core.har.Har;
-//import net.lightbody.bmp.proxy.ProxyServer;
 
 
 public class BrowserMobProxy {
-/*
-      public void server()
-        ProxyServer server = new ProxyServer(4444);
-        private WebDriver driver;
 
-        @Before
-        public void startProxy () throws Exception {
-            BrowserMobProxy proxy = new BrowserMobProxyServer();
-            proxy.start(0);
-            server = new ProxyServer(4444);
-            server.start();
-            server.autoBasicAuthorization("", "username", "password");
-            Proxy proxy = server.seleniumProxy();
+    ProxyServer server = new ProxyServer(4444);
+   // com.ning.http.client.ProxyServer server = new com.ning.http.client.ProxyServer(4444);
+    private WebDriver driver;
 
-            DesiredCapabilities capabilities = new DesiredCapabilities();
-            capabilities.setCapability(CapabilityType.PROXY, proxy);
-FirefoxOptions  test  = new FirefoxOptions().merge(capabilities);
-            driver = new FirefoxDriver(test);
+    @Before
+    public void startProxy() throws Exception {
+        BrowserMobProxyServer proxy = new BrowserMobProxyServer();
+        proxy.start(0);
+        server = new ProxyServer(4444);
+        server.start();
+        server.autoBasicAuthorization("https://my.platformphoenix.com", "username", "password");
+      //  Proxy proxy = server.seleniumProxy();
 
-        }
+        DesiredCapabilities capabilities = new DesiredCapabilities();
+        capabilities.setCapability(CapabilityType.PROXY, proxy);
+        FirefoxOptions test = new FirefoxOptions().merge(capabilities);
+        driver = new FirefoxDriver(test);
 
-        @Test
-        public void testAccessProtectedSite () throws Exception {
-            driver.get("https://example.com");
-            driver.findElement(By.className("sign-out"));
-        }
-
-        @After
-        public void stopProxyServer () throws Exception {
-            driver.quit();
-            server.stop();
-        }
     }
 
+    @Test
+    public void testAccessProtectedSite() throws Exception {
+        driver.get("https://example.com");
+        driver.findElement(By.className("sign-out"));
+    }
 
-  private WebDriver driver;
+    @After
+    public void stopProxyServer() throws Exception {
+        driver.quit();
+        server.stop();
+    }
+
+}
+
+/*
+    private WebDriver driver;
     private String baseUrl;
     private boolean acceptNextAlert = true;
     private StringBuffer verificationErrors = new StringBuffer();
@@ -108,4 +94,4 @@ FirefoxOptions  test  = new FirefoxOptions().merge(capabilities);
         }
     }
 */
-}
+

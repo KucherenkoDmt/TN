@@ -4,7 +4,7 @@ import java.io.IOException;
 
 public class FilleLogger extends AbstractLogger{
     @Override
-    protected void toFile(String stringToLog) throws IOException {
+    protected void toFile(String stringToLog)  {
         super.toFile(stringToLog);
     }
     @Override

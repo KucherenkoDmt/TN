@@ -64,7 +64,7 @@ public class LpToSuccess extends BasicClase {
             }
 
         }
-        log("Not successed LP is: " + notTestingStetusLp);
+        log("Not successed LP is: " + "\n" + notTestingStetusLp);
         driver.quit();
     }
 }

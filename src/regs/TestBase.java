@@ -5,6 +5,8 @@ import Patterns.CSV.CsvCell;
 import Patterns.CSV.ReadCSV4colon;
 import Patterns.Log.AbstractLogger;
 import Patterns.Log.ConsoleLogger;
+import Patterns.Log.Logger;
+import Patterns.Log.TextAndFileLogger;
 import com.opencsv.CSVReader;
 import org.apache.commons.io.FileUtils;
 import org.junit.After;
@@ -166,6 +168,10 @@ public class TestBase {
     protected void log(String stringToLog){
         ConsoleLogger consoleLogger = new ConsoleLogger();
         consoleLogger.log(stringToLog);
+    }
+    protected void logConsolAndLogFile(String stringToLog){
+        TextAndFileLogger textAndFileLogger = new TextAndFileLogger();
+        textAndFileLogger.log(stringToLog);
     }
 
 }
