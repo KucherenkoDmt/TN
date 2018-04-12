@@ -15,32 +15,11 @@ import java.util.concurrent.TimeUnit;
 
 public class TestBaseMob extends TestBase {
 
-    @Before
-    public void setUp() throws InterruptedException, IOException {
+    @Override
+    protected void beforeTestBefore() throws InterruptedException {
         this.driver = new ChromeDriver(emulateMobile());
-        log("Before test");
-        regInfo = ReadCSV4colon.csvDataRead();
-        log("reg info is readed and have row :" + (regInfo.size()-1));
-        wait = new WebDriverWait(this.driver, 15);
-        this.driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
-        beforeTest();
     }
-    protected void beforeTest() throws InterruptedException, IOException {}
 
-    @After
-    public void tearDown() throws Exception {
-        log("After test");
-        String emails = "";
-        for (int i = 0; i < emailOfUsers.size(); i++) {
-            emails += emailOfUsers.get(i) + "\n";
-        }
-        System.out.println(emails);
-        afterTest();
-        this.driver.quit();
-    }
-    protected void afterTest() throws Exception {
-
-    }
     protected ChromeOptions emulateMobile() throws InterruptedException {
         Map<String, String> mobileEmulation = new HashMap<>();
 
@@ -49,7 +28,4 @@ public class TestBaseMob extends TestBase {
         chromeOptions.setExperimentalOption("mobileEmulation", mobileEmulation);
         return chromeOptions;
     }
-
-
-
 }

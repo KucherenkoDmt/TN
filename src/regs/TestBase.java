@@ -3,9 +3,7 @@ package regs;
 import Admin.MakeUsersLikeTest;
 import Patterns.CSV.CsvCell;
 import Patterns.CSV.ReadCSV4colon;
-import Patterns.Log.AbstractLogger;
 import Patterns.Log.ConsoleLogger;
-import Patterns.Log.Logger;
 import Patterns.Log.TextAndFileLogger;
 import com.opencsv.CSVReader;
 import org.apache.commons.io.FileUtils;
@@ -13,12 +11,9 @@ import org.junit.After;
 import org.junit.Before;
 import org.openqa.selenium.*;
 import org.openqa.selenium.NoSuchElementException;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.awt.*;
 import java.io.*;
 import java.text.SimpleDateFormat;
 import java.util.*;
@@ -32,6 +27,33 @@ public class TestBase {
     protected ArrayList<String> emailOfUsers = new ArrayList<>();
 
 
+    @Before
+    public void setUp() throws InterruptedException, IOException {
+        beforeTestBefore();
+        log("Before test");
+        regInfo = csvDataRead();
+        log("reg info is readed and have row :" + (regInfo.size()-1));
+        wait = new WebDriverWait(this.driver, 15);
+        this.driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
+        beforeTestAfter();
+    }
+    protected void beforeTestBefore() throws InterruptedException {}
+    protected void beforeTestAfter() {}
+
+    @After
+    public void tearDown() throws Exception {
+        log("After test");
+        String emails = "";
+        for (int i = 0; i < emailOfUsers.size(); i++) {
+            emails += emailOfUsers.get(i) + "\n";
+        }
+        System.out.println(emails);
+        afterTest();
+        this.driver.quit();
+    }
+    protected void afterTest() throws Exception {
+    }
+
     public void choseCorrectedDOBandSetAge() {
         if (isElementPresent("//select[@id='UserForm_month']")) {
             log("this is old DOB");
@@ -40,7 +62,7 @@ public class TestBase {
             click("//select[@id='UserForm_year']/option[@value='1999']");
         } else {
             log("this is new DOB");
-            click("//option[@value='18']");
+            click("//option[@value='26']");
         }
     }
 
@@ -88,14 +110,15 @@ public class TestBase {
         return lines;
     }
 
-    protected void csvDataRead() throws IOException, InterruptedException {
+    protected List<CsvCell> csvDataRead() throws InterruptedException, IOException {
         CSVReader reader = new CSVReader(new FileReader("C:\\Users\\dmitrii.kucherenko\\IdeaProjects\\TN\\InfoForTesting.csv"));
         String[] csvCell;
         List<CsvCell> list = new ArrayList<>();
         while ((csvCell = reader.readNext()) != null) {
-            CsvCell csvCell1 = new CsvCell(csvCell[0], csvCell[1], csvCell[2], csvCell[3]);
+            CsvCell csvCell1 = new CsvCell(csvCell[0], csvCell[1], csvCell[2], csvCell[3], csvCell[4]);
             list.add(csvCell1);
         }
+        return list;
     }
 
     protected void forScreen(WebDriver driverThis) throws IOException {
@@ -172,6 +195,12 @@ public class TestBase {
     protected void logConsolAndLogFile(String stringToLog){
         TextAndFileLogger textAndFileLogger = new TextAndFileLogger();
         textAndFileLogger.log(stringToLog);
+    }
+    protected String chooseEmailForTest(String emailOfUser){
+        if(emailOfUser.length()<2){
+            return generateRandomEmail();
+        }
+        else return emailOfUser;
     }
 
 }

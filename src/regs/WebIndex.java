@@ -10,18 +10,12 @@ public class WebIndex extends TestBaseWeb {
 
 
     public WebIndex() throws IOException, InterruptedException {
-        super();
+      //  super();
     }
 
-    @Override
-    protected void beforeTest() throws IOException {
-        log("before test");
-
-      //  int counter;
-    }
 
     @Test
-    public void makeRegistrationWeb() throws Exception {
+    public void makeRegistrationWeb() throws InterruptedException {
         for (int i = 1; i < regInfo.size(); i++) {
             log("beginning of the registration cycle by row " + i);
             for (int j = 0; j < regInfo.get(i).getCounterOfRegistration(); j++) {
@@ -34,7 +28,7 @@ public class WebIndex extends TestBaseWeb {
                 click(choseGenderWeb(regInfo.get(i).getNumberOfGenderValue()));
                 log("Set age");
                 choseCorrectedDOBandSetAge();
-                String emailForRegistration = generateRandomEmail();
+                String emailForRegistration = chooseEmailForTest(regInfo.get(i).getEmailOfUser());
                 log("Type email " + emailForRegistration);
                 type(choseActiveElement("//div[@class='field_box']/input[@id='UserForm_email']", "//input[@id='email-field']"), emailForRegistration);
                 log("Type password");
@@ -59,10 +53,6 @@ public class WebIndex extends TestBaseWeb {
         makeUsersLikeTest(emailOfUsers);
         log("Close driver");
     }
-
-
-
-
 
     public void checkCheckboxOfTerms() {
         if (isElementPresent("//div[@id='terms_check']/label")) {

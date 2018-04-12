@@ -10,8 +10,6 @@ import static org.junit.Assert.fail;
 
 public class MobIndex extends TestBaseMob {
 
-    public MobIndex() throws IOException, InterruptedException {
-    }
 
     @Test
     public void makeRegistrationMob() throws InterruptedException {
@@ -33,7 +31,8 @@ public class MobIndex extends TestBaseMob {
                 type("//input[@class='input-text screenname']", "dfdklsgka");
                 log("Set age");
                 choseCorrectedDOBandSetAge();
-                String emailForRegistration = generateRandomEmail();
+              //  String emailForRegistration = generateRandomEmail();
+                String emailForRegistration = chooseEmailForTest(regInfo.get(i).getEmailOfUser());
                 log("Type email " + emailForRegistration);
                 type("//input[@class='input-text']", emailForRegistration);
                 log("Type password");

@@ -5,12 +5,14 @@ public class CsvCell {
     private String ip_address;
     private String counterOfRegistration = "";
     private String numberOfGenderValue="";
+    private String emailOfUser="";
 
-    public CsvCell(String link, String ip_address, String counterOfRegistration, String numberOfGenderValue) {
+    public CsvCell(String link, String ip_address, String counterOfRegistration, String numberOfGenderValue, String emailOfUser) {
         this.link = link;
         this.ip_address = ip_address;
         this.counterOfRegistration = counterOfRegistration;
         this.numberOfGenderValue = numberOfGenderValue;
+        this.emailOfUser = emailOfUser;
     }
     //int id = list.get(0).getLink();
 
@@ -23,7 +25,7 @@ public class CsvCell {
     }
 
     public String getIp_address() {
-        return ip_address;
+        return ip_address.trim() ;
     }
 
     public int getCounterOfRegistration() {
@@ -40,5 +42,9 @@ public class CsvCell {
         }
         else {
             return 1;}
+    }
+
+    public String getEmailOfUser() {
+        return emailOfUser;
     }
 }

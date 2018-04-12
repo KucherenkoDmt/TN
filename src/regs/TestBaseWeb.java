@@ -11,7 +11,11 @@ import java.util.concurrent.TimeUnit;
 
 public class TestBaseWeb extends TestBase{
 
-    @Before
+    @Override
+    protected void beforeTestBefore() throws InterruptedException {
+        this.driver = new ChromeDriver();
+    }
+   /* @Before
     public void setUp() throws InterruptedException, IOException {
         this.driver = new ChromeDriver();
         log("Before test");
@@ -19,9 +23,9 @@ public class TestBaseWeb extends TestBase{
         log("reg info is readed and have row :" + regInfo.size());
         wait = new WebDriverWait(this.driver, 15);
         this.driver.manage().timeouts().implicitlyWait(1, TimeUnit.SECONDS);
-        beforeTest();
+        beforeTestAfter();
     }
-    protected void beforeTest() throws InterruptedException, IOException {}
+    protected void beforeTestAfter() throws InterruptedException, IOException {}
 
     @After
     public void tearDown() throws Exception {
@@ -33,9 +37,8 @@ public class TestBaseWeb extends TestBase{
         System.out.println(emails);
         afterTest();
         this.driver.quit();
-    }
-    protected void afterTest() throws Exception {
-    }
+    }*/
+
     protected String choseGenderWeb(int numberOfGender)  {
         // 1 - male
         // 2 - female

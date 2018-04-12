@@ -1,37 +1,7 @@
 
-reg url: https://m.iamnaughty.com/aff.php?dynamicpage=imn_mlp_5st_memb_a&utm_campaign=tfe_bm&utm_funnel=tds&utm_ex=b&dci=b610d90fbaf823426ce0c591ef86021421337902&tds_campaign=mtu21556&tds_id=mtu21556_b_lp_default_iant&tds_oid=004ec9e22bac11e58e3cd4bed9a94ace_&id=20630&tdsId=mtu21556_b_choice_default&tds_cid=d564b44041e85c585e67bce5764d6d657a157ed3&
-Id: d03ca6883d5f11e89536441ea14ed80c |  user email: 1+11_04.1together@maildrop.ropot.net
-lid: 0f70681bef8611e58a6f101f74370270 | gender: male | orientation: hetero | loc: USA | trafic_souce: direct
-reg url: http://www.flirt.com/
-Id: fb5986c63d5f11e89536441ea14ed80c |  user email: 2+11_04.1together@maildrop.ropot.net
-lid: 0d9408aac49911e38e3e68b599be7074 | gender: female | orientation: hetero | loc: USA | trafic_souce: direct
-reg url: https://m.flirt.com/
-Id: fe2d7f2a3d6011e89536441ea14ed80c |  user email: 3+11_04.1together@maildrop.ropot.net
-lid: 0d9408aac49911e38e3e68b599be7074 | gender: female | orientation: hetero | loc: USA | trafic_souce: direct
+reg url: http://www.benaughty.com/
+Id: df52d0803e3b11e89536441ea14ed80c |  user email: 12-13_25.44tn@maildrop.ropot.net
+lid: 403df42af53111e39ef5441ea14ed80c | gender: male | orientation: hetero | loc: USA | trafic_souce: direct
 reg url: http://www.quickflirt.com/
-Id: 263e59073d6711e89536441ea14ed80c |  user email: 4+11_04.1together@maildrop.ropot.net
-lid: d7f4714fc65a11e58a6f101f74370270 | gender: male | orientation: hetero | loc: USA | trafic_souce: direct
-reg url: https://m.wildspank.com/coregistration/auto/reg?utm_source=dda&utm_medium=mob&utm_campaign=tfe_bm&utm_funnel=tds&utm_ex=a&tds_campaign=mtu21556&tds_id=mtu21556_a_choice_regapi&tds_oid=iant&tds_cid=c95290b0e3154fd2f30ecac74cef4f5ed6974902
-Id: 3a82e53f3d6611e89536441ea14ed80c |  user email: 5+11_04.1together@maildrop.ropot.net
-lid: unknown | gender: male | orientation: hetero | loc: USA | trafic_souce: dda
-reg url: http://www.upforit.com/
-Id: 14b3e6d83d7011e89536441ea14ed80c |  user email: 6+11_04.1together@maildrop.ropot.net
-lid: 6843aa467adf11e4ac4dd4bed9a9456d | gender: male | orientation: hetero | loc: USA | trafic_souce: direct
-reg url: https://m.iamnaughty.com/aff.php?dynamicpage=imn_mlp_5st_mod_a_eml&pHash=ine2u-v-t&utm_campaign=tfe_bm&utm_funnel=tds&utm_ex=a&dci=48df3ab9e761b71a6b404c9710b2ba8045184ef6&tds_campaign=mtu21556&tds_id=mtu21556_a_lp_regapi_iant&tds_oid=02891da8f60011e7b3481402ec33333c_phash%3Dine2u-v-t&id=21997&tdsId=mtu21556_a_choice_regapi&tds_cid=47bf8235713a7ff14011dcaa9f4d60ae210177d7&
-Id: 04fef2e03d7d11e89536441ea14ed80c |  user email: 7+11_04.1together@maildrop.ropot.net
-lid: 02891da8f60011e7b3481402ec33333c | gender: male | orientation: hetero | loc: USA | trafic_souce: direct
-reg url: http://www.benaughty.com/
-Id: f75a47cb3d7e11e89536441ea14ed80c |  user email: 8+11_04.1together@maildrop.ropot.net
-lid: d000db2ad48711e58a6f101f74370270 | gender: male | orientation: hetero | loc: USA | trafic_souce: direct
-reg url: http://www.benaughty.com/
-Id: 6a98c3083d7f11e89536441ea14ed80c |  user email: 9+11_04.1together@maildrop.ropot.net
-lid: d000db2ad48711e58a6f101f74370270 | gender: male | orientation: hetero | loc: USA | trafic_souce: direct
-reg url: http://www.benaughty.com/
-Id: 680917323d8e11e89536441ea14ed80c |  user email: 11+11_04.1together@maildrop.ropot.net
-lid: d000db2ad48711e58a6f101f74370270 | gender: female | orientation: hetero | loc: USA | trafic_souce: direct
-reg url: http://www.benaughty.com/
-Id: 59ce236e3d8f11e89536441ea14ed80c |  user email: 12+11_04.1together@maildrop.ropot.net
-lid: d000db2ad48711e58a6f101f74370270 | gender: female | orientation: hetero | loc: USA | trafic_souce: direct
-reg url: http://www.benaughty.com/
-Id: 510be1c03d9d11e89536441ea14ed80c |  user email: 13+11_04.1together@maildrop.ropot.net
-lid: d000db2ad48711e58a6f101f74370270 | gender: male | orientation: hetero | loc: USA | trafic_souce: direct
+Id: eaed6a883e3b11e89536441ea14ed80c |  user email: +12_04.1together@maildrop.ropot.net
+lid: e1eb478ea34411e585d9101f74370270 | gender: male | orientation: hetero | loc: USA | trafic_souce: direct

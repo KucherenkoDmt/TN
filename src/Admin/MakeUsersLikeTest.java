@@ -24,11 +24,11 @@ public class MakeUsersLikeTest extends BasicClase {
     }
 
    @Test
-   public void makeUserLikeTests() throws Exception {
+   public void makeUserLikeTests() throws IOException, InterruptedException {
         makeUserAsTests(emailOfusers);
    }
 
-    public void makeUserAsTests(ArrayList<String> emailOfusers) throws Exception {
+    public void makeUserAsTests(ArrayList<String> emailOfusers) throws IOException, InterruptedException {
         super.enterToPhenix(driver);
         String usersLog = "";
         for (int i = 0; i < emailOfusers.size(); i++) {

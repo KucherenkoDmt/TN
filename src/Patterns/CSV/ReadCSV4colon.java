@@ -9,7 +9,7 @@ import java.io.IOException;
 import java.util.*;
 
 public class ReadCSV4colon {
-    public static void main(String[] args) throws IOException, InterruptedException {
+    public static void main(String[] args) throws InterruptedException, IOException {
         ReadCSV4colon readCSV4colon = new ReadCSV4colon();
         readCSV4colon.csvDataRead();
     }
@@ -21,7 +21,7 @@ public class ReadCSV4colon {
         String[] csvCell;
         List<CsvCell> list = new ArrayList<>();
         while ((csvCell = reader.readNext()) != null) {
-            CsvCell csvCell1 = new CsvCell(csvCell[0], csvCell[1], csvCell[2], csvCell[3]);
+            CsvCell csvCell1 = new CsvCell(csvCell[0], csvCell[1], csvCell[2], csvCell[3], csvCell[4]);
             list.add(csvCell1);
         }
       return list;

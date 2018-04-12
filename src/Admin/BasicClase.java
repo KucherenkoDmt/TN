@@ -31,7 +31,7 @@ public class BasicClase extends AbstractLogger {
     }
 
 
-    protected void enterToPhenix(WebDriver driver) throws IOException, AWTException, InterruptedException {
+    protected void enterToPhenix(WebDriver driver) throws IOException, InterruptedException {
         log("Open phenix");
         driver.get("https://my.platformphoenix.com/");
         Thread.sleep(2000);
@@ -62,15 +62,6 @@ public class BasicClase extends AbstractLogger {
         return lines;
     }
 
-    public void csvDataRead() throws IOException, InterruptedException {
-        CSVReader reader = new CSVReader(new FileReader("C:\\Users\\dmitrii.kucherenko\\IdeaProjects\\TN\\InfoForTesting.csv"));
-        String[] csvCell;
-        List<CsvCell> list = new ArrayList<>();
-        while ((csvCell = reader.readNext()) != null) {
-            CsvCell csvCell1 = new CsvCell(csvCell[0], csvCell[1], csvCell[2], csvCell[3]);
-            list.add(csvCell1);
-        }
-    }
 
     protected void forScreen(WebDriver driverThis) throws IOException {
         File screenshot = ((TakesScreenshot) driverThis).getScreenshotAs(OutputType.FILE);
