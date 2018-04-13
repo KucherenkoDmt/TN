@@ -37,8 +37,6 @@ public class MobIndex extends TestBaseMob {
                 type("//input[@class='input-text']", emailForRegistration);
                 log("Type password");
                 type("//input[@class='input-text _passwordField']", "111111");
-               // log("Check checkbox of Terms and click if it available");
-                //    checkCheckboxOfTerms();
                 log("click submit");
                 click("//button[@id='btn_register_submit']");
                 log("wait until page to load");
@@ -51,11 +49,7 @@ public class MobIndex extends TestBaseMob {
             }
         }
     }
-    @Override
-    protected void afterTest() throws Exception {
-        makeUsersLikeTest(emailOfUsers);
-        log("Close driver");
-    }
+
 
     protected String choseGenderMob(int numberOfGender) {
         // 1 - male

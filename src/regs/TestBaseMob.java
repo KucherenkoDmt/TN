@@ -28,4 +28,5 @@ public class TestBaseMob extends TestBase {
         chromeOptions.setExperimentalOption("mobileEmulation", mobileEmulation);
         return chromeOptions;
     }
+
 }

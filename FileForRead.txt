@@ -1,6 +1,4 @@
-12-13_22.31tn@maildrop.ropot.net
-12-13_22.48tn@maildrop.ropot.net
-12-13_23.05tn@maildrop.ropot.net
-12-13_23.22tn@maildrop.ropot.net
-12-13_23.38tn@maildrop.ropot.net
-12-13_23.55tn@maildrop.ropot.net
+iwb_mlp_5st_memb_t_emln
+bw_mlp_5st_memb_a_emln  
+bw_mlp_5st_mod_a_emln
+cc gjcnfdm gkbp

@@ -10,7 +10,6 @@ public class WebIndex extends TestBaseWeb {
 
 
     public WebIndex() throws IOException, InterruptedException {
-      //  super();
     }
 
 
@@ -48,15 +47,22 @@ public class WebIndex extends TestBaseWeb {
         }
     }
 
-    @Override
-    public void afterTest() throws Exception {
-        makeUsersLikeTest(emailOfUsers);
-        log("Close driver");
-    }
 
-    public void checkCheckboxOfTerms() {
+    private void checkCheckboxOfTerms() {
         if (isElementPresent("//div[@id='terms_check']/label")) {
             click("//div[@id='terms_check']/label");
         }
     }
+
+   /* private void choseCorrectedDOBandSetAge() {
+        if (isElementPresent("//select[@id='UserForm_month']")) {
+            log("this is old DOB");
+            click("//select[@id='UserForm_day']/option[@value='01']");
+            click("//select[@id='UserForm_month']/option[@value='01']");
+            click("//select[@id='UserForm_year']/option[@value='1999']");
+        } else {
+            log("this is new DOB");
+            click("//option[@value='26']");
+        }
+    }*/
 }

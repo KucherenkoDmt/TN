@@ -15,29 +15,7 @@ public class TestBaseWeb extends TestBase{
     protected void beforeTestBefore() throws InterruptedException {
         this.driver = new ChromeDriver();
     }
-   /* @Before
-    public void setUp() throws InterruptedException, IOException {
-        this.driver = new ChromeDriver();
-        log("Before test");
-        regInfo = ReadCSV4colon.csvDataRead();
-        log("reg info is readed and have row :" + regInfo.size());
-        wait = new WebDriverWait(this.driver, 15);
-        this.driver.manage().timeouts().implicitlyWait(1, TimeUnit.SECONDS);
-        beforeTestAfter();
-    }
-    protected void beforeTestAfter() throws InterruptedException, IOException {}
 
-    @After
-    public void tearDown() throws Exception {
-        log("After test");
-        String emails = "";
-        for (int i = 0; i < emailOfUsers.size(); i++) {
-            emails += emailOfUsers.get(i) + "\n";
-        }
-        System.out.println(emails);
-        afterTest();
-        this.driver.quit();
-    }*/
 
     protected String choseGenderWeb(int numberOfGender)  {
         // 1 - male

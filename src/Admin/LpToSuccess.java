@@ -55,7 +55,7 @@ public class LpToSuccess extends BasicClase {
                 driver.findElement(By.xpath("//*[text()='" + landingPage + "']/following::a[text()=\"[action]\"]")).click();
                 Thread.sleep(1000);
                 driver.findElement(By.xpath("//*[text()='" + landingPage + "']/following::*/a[text()=\"[test success]\"]")).click();
-                Thread.sleep(2000);
+                Thread.sleep(2500);
                 //нужно вейтер добавить
 
                 log("Check of success");

@@ -1,7 +1,4 @@
 
-reg url: http://www.benaughty.com/
-Id: df52d0803e3b11e89536441ea14ed80c |  user email: 12-13_25.44tn@maildrop.ropot.net
-lid: 403df42af53111e39ef5441ea14ed80c | gender: male | orientation: hetero | loc: USA | trafic_souce: direct
-reg url: http://www.quickflirt.com/
-Id: eaed6a883e3b11e89536441ea14ed80c |  user email: +12_04.1together@maildrop.ropot.net
-lid: e1eb478ea34411e585d9101f74370270 | gender: male | orientation: hetero | loc: USA | trafic_souce: direct
+reg url: https://m.iamnaughty.com/coregistration/auto/reg?utm_source=dda&utm_medium=mob&utm_campaign=tje_bm&utm_funnel=tds&utm_ex=a&tds_campaign=mtu21556&tds_id=mtu21556_a_choice_regapi&tds_oid=iant&tds_cid=75affcbe71531f7216e9d803ec06fa91090c1a20
+Id: 2bb5500a3ef311e89536441ea14ed80c |  user email: jack26@maildrop.ropot.net
+lid: unknown | gender: male | orientation: hetero | loc: USA | trafic_souce: dda
